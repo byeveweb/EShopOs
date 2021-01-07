@@ -1,0 +1,3 @@
+# EShopOs
+
+#Core
