@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="CostumerData.cs" />
+    <Compile Include="OrderDetail.cs" />
+    <Compile Include="Orders.cs" />
+    <Compile Include="OrderStatus.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
