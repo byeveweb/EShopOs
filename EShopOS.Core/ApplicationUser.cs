@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace EShopOS.Core
 {
+    /// <summary>
+    /// Entidad de dominio Usuario
+    /// </summary>
     public class ApplicationUser : IdentityUser
     {
         public ClaimsIdentity GenerateUserIdentity(UserManager<ApplicationUser> manager)
@@ -25,16 +28,5 @@ namespace EShopOS.Core
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-    }
 }

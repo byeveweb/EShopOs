@@ -8,6 +8,7 @@ using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using EShopOS.Core;
+using EShopOS.DAL;
 
 namespace EShopOS.Web
 {
