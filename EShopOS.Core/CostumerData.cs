@@ -22,7 +22,7 @@ namespace EShopOS.Core
         /// <summary>
         /// Nombre del cliente
         /// </summary>
-        public string Name { get; set; }
+        public string FirstName { get; set; }
 
 
         /// <summary>

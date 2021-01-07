@@ -22,24 +22,17 @@ namespace EShopOS.Core
         /// <summary>
         /// Id al que pertenece el pedido, desde Orders
         /// </summary>
-        public Orders order { get; set; }
+        public Order Order { get; set; }
 
         /// <summary>
         /// Creamos la relación entre ambas tablas, trayendo el Id del Order
         /// </summary>
         [ForeignKey("Order")]
-        public string Order_Id { get; set; }
-
+        public int Order_Id { get; set; }
         /// <summary>
-        /// Id al que pertenece el pedido, desde Prodcuts
+        /// Colección de productos
         /// </summary>
-        public Product Product { get; set; }
-
-        /// <summary>
-        /// Creamos la relación entre ambas tablas, trayendo el Id del Producto
-        /// </summary>
-        [ForeignKey("Product")]
-        public string Product_Id { get; set; }
+       public virtual List<Product> Products { get; set; }
 
         /// <summary>
         /// Cantidad de productos

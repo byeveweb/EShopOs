@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +20,24 @@ namespace EShopOS.DAL
         {
             return new ApplicationDbContext();
         }
+        /// <summary>
+        /// Crear coleccion de productos
+        /// </summary>
+        public DbSet<Product> Products { get; set; }
+
+        /// <summary>
+        /// Crear coleccion de Datos de Cliente
+        /// </summary>
+        public DbSet<CostumerData> Costumers { get; set; }
+
+        /// <summary>
+        /// Crear coleccion de Pedidos
+        /// </summary>
+        public DbSet<Order> Order { get; set; }
+
+        /// <summary>
+        /// Crear coleccion de productos
+        /// </summary>
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace EShopOS.Core
     /// <summary>
     /// Entidad Pedido
     /// </summary>
-    public class Orders
+    public class Order
     {
 
         /// <summary>
