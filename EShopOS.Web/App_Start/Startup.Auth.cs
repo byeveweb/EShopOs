@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using EShopOS.Web.Models;
+using EShopOS.Core;
 
 namespace EShopOS.Web
 {
