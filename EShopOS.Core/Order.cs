@@ -35,12 +35,12 @@ namespace EShopOS.Core
         /// <summary>
         /// Fecha de Creación del pedido
         /// </summary>
-        public DateTime? CreateDateOrder { get; set; }
+        public DateTime? CreatedDateOrder { get; set; }
 
         /// <summary>
         /// Hora de Creación del pedido
         /// </summary>
-        public DateTime? CreateTimeOrder { get; set; }
+        public DateTime? CreatedTimeOrder { get; set; }
 
 
         /// <summary>

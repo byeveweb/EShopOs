@@ -29,6 +29,7 @@ namespace EShopOS.Core
         /// </summary>
         [ForeignKey("Order")]
         public int Order_Id { get; set; }
+
         /// <summary>
         /// Colección de productos
         /// </summary>

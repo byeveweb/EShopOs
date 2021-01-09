@@ -29,7 +29,7 @@ namespace EShopOS.Core
         /// <summary>
         /// Percio del producto
         /// </summary>
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         /// <summary>
         /// Existencias
