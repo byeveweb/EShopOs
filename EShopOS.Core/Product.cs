@@ -40,7 +40,6 @@ namespace EShopOS.Core
         /// EStado del producto Pedido (Disponible o no disponible)
         /// </summary>
         public ProductStatus ProductStatus { get; set; }
-
-       
-}
+        
+    }
 }
