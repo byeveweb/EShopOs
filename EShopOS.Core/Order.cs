@@ -47,6 +47,8 @@ namespace EShopOS.Core
         /// EStado del Pedido (Disponible o no disponible)
         /// </summary>
         public OrderStatus OrderStatus { get; set; }
+
+        public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }
 
