@@ -26,6 +26,43 @@ namespace EShopOS.Core
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
+
+
+        /// <summary>
+        /// Nombre del cliente
+        /// </summary>
+        public string FirstName { get; set; }
+
+
+        /// <summary>
+        /// Apellido del cliente
+        /// </summary>
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// DNI del cliente
+        /// </summary>
+        public string DocumentIdentityNumber { get; set; }
+
+        /// <summary>
+        /// Calle del cliente
+        /// </summary>
+        public string PostalAddress { get; set; }
+
+        /// <summary>
+        /// Ciudad del cliente
+        /// </summary>
+        public string City { get; set; }
+
+        /// <summary>
+        /// Provincia del cliente
+        /// </summary>
+        public string Province { get; set; }
+
+        /// <summary>
+        /// Código postañ del cliente
+        /// </summary>
+        public int PostalCode { get; set; }
     }
 
 

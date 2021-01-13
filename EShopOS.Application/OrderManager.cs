@@ -14,14 +14,7 @@ namespace EShopOS.Application
     /// </summary>
     public class OrderManager :  GenericManager<Order>
     {
-        /// <summary>
-        /// Constructor de Manager Detalle del pedido
-        /// </summary>
-        /// <param name="context">Contexto de datos</param>
-        public OrderManager(ApplicationDbContext context) : base(context)
-        {
 
-        }
 
 
 

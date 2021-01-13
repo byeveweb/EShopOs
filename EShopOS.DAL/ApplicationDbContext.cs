@@ -25,19 +25,12 @@ namespace EShopOS.DAL
         /// </summary>
         public DbSet<Product> Products { get; set; }
 
-        /// <summary>
-        /// Crear coleccion de Datos de Cliente
-        /// </summary>
-        public DbSet<CostumerData> Costumers { get; set; }
 
         /// <summary>
         /// Crear coleccion de Pedidos
         /// </summary>
         public DbSet<Order> Order { get; set; }
 
-        /// <summary>
-        /// Crear coleccion de productos
-        /// </summary>
-        public DbSet<OrderDetail> OrderDetails { get; set; }
+        
     }
 }

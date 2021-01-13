@@ -18,8 +18,14 @@ namespace EShopOS.Core
         Open = 0,
 
         /// <summary>
+        /// En proceso
+        /// </summary>
+        Process = 1,
+
+        /// <summary>
         /// Cerrado
         /// </summary>
-        Cerrado = 1,
+        Close = 2,
+
     }
 }
