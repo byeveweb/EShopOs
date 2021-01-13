@@ -31,6 +31,12 @@ namespace EShopOS.DAL
         /// </summary>
         public DbSet<Order> Order { get; set; }
 
-        
+
+        /// <summary>
+        /// Crear coleccion de ShoppingCar
+        /// </summary>
+        public DbSet<ShopCar> ShoppingCar { get; set; }
+
+
     }
 }

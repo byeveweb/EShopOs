@@ -55,17 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\202101091646021_InitialCreate.cs" />
-    <Compile Include="Migrations\202101091646021_InitialCreate.Designer.cs">
-      <DependentUpon>202101091646021_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101091646467_Init.cs" />
-    <Compile Include="Migrations\202101091646467_Init.Designer.cs">
-      <DependentUpon>202101091646467_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101091800497_AddFieldListOrdersDetails.cs" />
-    <Compile Include="Migrations\202101091800497_AddFieldListOrdersDetails.Designer.cs">
-      <DependentUpon>202101091800497_AddFieldListOrdersDetails.cs</DependentUpon>
+    <Compile Include="Migrations\202101132000347_Init.cs" />
+    <Compile Include="Migrations\202101132000347_Init.Designer.cs">
+      <DependentUpon>202101132000347_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,14 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101091646021_InitialCreate.resx">
-      <DependentUpon>202101091646021_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101091646467_Init.resx">
-      <DependentUpon>202101091646467_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101091800497_AddFieldListOrdersDetails.resx">
-      <DependentUpon>202101091800497_AddFieldListOrdersDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101132000347_Init.resx">
+      <DependentUpon>202101132000347_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EShopOS.Core
 {
-    public class ShoppingCar
+    public class ShopCar
     {
         /// <summary>
         /// Identificador del Pedido
@@ -25,16 +25,6 @@ namespace EShopOS.Core
         [ForeignKey("User")]
         public string User_Id { get; set; }
 
-        /// </summary>
-        /// Usuario al que pertenece el carrito, desde Application User
-        /// </summary>
-        public Order Order { get; set; }
-
-        /// <summary>
-        /// Creamos la relación entre ambas tablas, trayendo el Id de la orden
-        /// </summary>
-        [ForeignKey("Order")]
-        public string Order_Id { get; set; }
 
         /// </summary>
         /// Usuario al que pertenece el carrito, desde Application User
@@ -45,7 +35,8 @@ namespace EShopOS.Core
         /// Creamos la relación entre ambas tablas, trayendo el Id del producto
         /// </summary>
         [ForeignKey("Product")]
-        public string Product_Id { get; set; }
+        public int Product_Id { get; set; }
+
 
 
         /// <summary>

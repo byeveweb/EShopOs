@@ -23,13 +23,13 @@ namespace EShopOS.Core
         /// <summary>
         /// Usuario al que pertenece el pedido, desde Application User
         /// </summary>
-        public ShoppingCar ShoppingCar { get; set; }
+       public ShopCar ShopCar { get; set; }
 
         /// <summary>
         /// Creamos la relación entre ambas tablas, trayendo el Id del User
         /// </summary>
-        [ForeignKey("ShoppingCar")]
-        public string ShoppingCar_Id { get; set; }
+      [ForeignKey("ShopCar")]
+      public int ShopCar_Id { get; set; }
 
 
         /// <summary>
@@ -40,9 +40,11 @@ namespace EShopOS.Core
    
 
         /// <summary>
-        /// EStado del Pedido (Disponible o no disponible)
+        /// Estado del Pedido (Disponible o no disponible)
         /// </summary>
         public OrderStatus OrderStatus { get; set; }
+
+
 
 
     }

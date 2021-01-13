@@ -3,33 +3,63 @@ namespace EShopOS.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.CostumerDatas",
+                "dbo.Orders",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        DocumentIdentityNumber = c.String(),
-                        PostalAddress = c.String(),
-                        City = c.String(),
-                        Province = c.String(),
-                        PostalCode = c.Int(nullable: false),
-                        User_Id = c.String(maxLength: 128),
+                        ShopCar_Id = c.Int(nullable: false),
+                        CreatedDateOrder = c.DateTime(nullable: false),
+                        OrderStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.ShopCars", t => t.ShopCar_Id, cascadeDelete: true)
+                .Index(t => t.ShopCar_Id);
+            
+            CreateTable(
+                "dbo.ShopCars",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        User_Id = c.String(maxLength: 128),
+                        Product_Id = c.Int(nullable: false),
+                        Quantity = c.Int(nullable: false),
+                        TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Products", t => t.Product_Id, cascadeDelete: true)
                 .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
-                .Index(t => t.User_Id);
+                .Index(t => t.User_Id)
+                .Index(t => t.Product_Id);
+            
+            CreateTable(
+                "dbo.Products",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        NameProduct = c.String(),
+                        Description = c.String(),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Stock = c.Int(nullable: false),
+                        ProductStatus = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        PostalAddress = c.String(),
+                        City = c.String(),
+                        Province = c.String(),
+                        PostalCode = c.Int(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -84,48 +114,6 @@ namespace EShopOS.DAL.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.Orders",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        User_Id = c.String(maxLength: 128),
-                        CreatedDateOrder = c.DateTime(),
-                        CreatedTimeOrder = c.DateTime(),
-                        OrderStatus = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
-                .Index(t => t.User_Id);
-            
-            CreateTable(
-                "dbo.OrderDetails",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Order_Id = c.Int(nullable: false),
-                        Quantity = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Orders", t => t.Order_Id, cascadeDelete: true)
-                .Index(t => t.Order_Id);
-            
-            CreateTable(
-                "dbo.Products",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        NameProduct = c.String(),
-                        Description = c.String(),
-                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Stock = c.Int(nullable: false),
-                        ProductStatus = c.Int(nullable: false),
-                        OrderDetail_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.OrderDetails", t => t.OrderDetail_Id)
-                .Index(t => t.OrderDetail_Id);
-            
-            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -140,32 +128,29 @@ namespace EShopOS.DAL.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Products", "OrderDetail_Id", "dbo.OrderDetails");
-            DropForeignKey("dbo.OrderDetails", "Order_Id", "dbo.Orders");
-            DropForeignKey("dbo.Orders", "User_Id", "dbo.AspNetUsers");
-            DropForeignKey("dbo.CostumerDatas", "User_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Orders", "ShopCar_Id", "dbo.ShopCars");
+            DropForeignKey("dbo.ShopCars", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.ShopCars", "Product_Id", "dbo.Products");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.Products", new[] { "OrderDetail_Id" });
-            DropIndex("dbo.OrderDetails", new[] { "Order_Id" });
-            DropIndex("dbo.Orders", new[] { "User_Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.CostumerDatas", new[] { "User_Id" });
+            DropIndex("dbo.ShopCars", new[] { "Product_Id" });
+            DropIndex("dbo.ShopCars", new[] { "User_Id" });
+            DropIndex("dbo.Orders", new[] { "ShopCar_Id" });
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.Products");
-            DropTable("dbo.OrderDetails");
-            DropTable("dbo.Orders");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.CostumerDatas");
+            DropTable("dbo.Products");
+            DropTable("dbo.ShopCars");
+            DropTable("dbo.Orders");
         }
     }
 }

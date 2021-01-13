@@ -39,10 +39,6 @@ namespace EShopOS.Core
         /// </summary>
         public string LastName { get; set; }
 
-        /// <summary>
-        /// DNI del cliente
-        /// </summary>
-        public string DocumentIdentityNumber { get; set; }
 
         /// <summary>
         /// Calle del cliente
