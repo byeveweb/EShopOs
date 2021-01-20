@@ -1,4 +1,5 @@
-﻿using EShopOS.DAL;
+﻿using EShopOS.Core;
+using EShopOS.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EShopOS.Application
 {
-   public class ProductManager : GenericManager<ProductManager>
+   public class ProductManager : GenericManager<Product>
     {
         /// <summary>
         /// Constructor

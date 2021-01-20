@@ -64,5 +64,16 @@ namespace EShopOS.Application
             return GetById(new object[] { id });
         }
 
+
+        /// <summary>
+        /// Obtiene todos los elementos
+        /// </summary>
+        /// <param name="entity">Identificador</param>
+        /// <returns>Todos los elemento</returns>
+        public IQueryable<T> GetAll()
+        {
+            return Context.Set<T>();
+        }
+
     }
 }
