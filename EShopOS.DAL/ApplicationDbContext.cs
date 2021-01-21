@@ -20,6 +20,7 @@ namespace EShopOS.DAL
         {
             return new ApplicationDbContext();
         }
+
         /// <summary>
         /// Crear coleccion de productos
         /// </summary>
@@ -29,13 +30,9 @@ namespace EShopOS.DAL
         /// <summary>
         /// Crear coleccion de Pedidos
         /// </summary>
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
 
-        /// <summary>
-        /// Crear coleccion de ShoppingCar
-        /// </summary>
-        public DbSet<ShopCar> ShoppingCar { get; set; }
 
 
     }

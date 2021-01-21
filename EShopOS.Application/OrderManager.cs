@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EShopOS.Application
 {
-    public class OrderManager : GenericManager<OrderManager>
+    public class OrderManager : GenericManager<Order>
     {
         /// <summary>
         /// Constructor
@@ -20,15 +20,17 @@ namespace EShopOS.Application
 
         }
 
+
         /// <summary>
-        /// Traemos a través del método GetByShopCarId el Id del producto
+        /// Obtiene todas las incidencias de un usuario
         /// </summary>
-        /// <param name="shopCarId">el id del Carrito</param>
-        /// <returns>Carrito del producto</returns>
-        public IQueryable<ShopCar> GetByShopCartId(int shopCarId)
+        /// <param name="userId">Identificador de usuario</param>
+        /// <returns>Incidencias del usuario</returns>
+        public IQueryable<Order> GetByUser(string userId)
         {
-            return Context.Set<ShopCar>().Where(e => e.Id == shopCarId);
+            return Context.Orders.Where(e => e.User_Id == userId);
         }
+
     }
 }
 

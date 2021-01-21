@@ -20,17 +20,6 @@ namespace EShopOS.Core
         public int Id { get; set; }
 
 
-        /// <summary>
-        /// Usuario al que pertenece el pedido, desde Application User
-        /// </summary>
-       public ShopCar ShopCar { get; set; }
-
-        /// <summary>
-        /// Creamos la relación entre ambas tablas, trayendo el Id del User
-        /// </summary>
-      [ForeignKey("ShopCar")]
-      public int ShopCar_Id { get; set; }
-
 
         /// <summary>
         /// Fecha de Creación del pedido
@@ -45,7 +34,21 @@ namespace EShopOS.Core
         public OrderStatus OrderStatus { get; set; }
 
 
+        /// <summary>
+        /// Identificador del usuario que ha escrito el mensaje
+        /// </summary>
+        [ForeignKey("User")]
+        public string User_Id { get; set; }
 
+        /// <summary>
+        /// Usuario que ha creado la incidencia
+        /// </summary>
+        public ApplicationUser User { get; set; }
+
+        /// <summary>
+        /// Lista de mensajes
+        /// </summary>
+        public virtual List<Product> Products { get; set; }
 
     }
 }

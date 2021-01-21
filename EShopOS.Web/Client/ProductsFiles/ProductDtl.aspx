@@ -4,6 +4,6 @@
     <hr />
     <asp:HiddenField ID="txtId" runat="server" />
     <asp:Label ID="txtNombreProducto" runat="server" Text="txtNombreProducto"></asp:Label>
-    <asp:TextBox ID="txtNameProduct" runat="server" Text=""></!--asp:TextBox>
+    <asp:TextBox ID="txtNameProduct" runat="server" Text=""></asp:TextBox>
 </asp:Content>
 

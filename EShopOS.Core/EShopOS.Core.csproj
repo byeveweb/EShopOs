@@ -60,7 +60,6 @@
     <Compile Include="Product.cs" />
     <Compile Include="ProductStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShopCar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

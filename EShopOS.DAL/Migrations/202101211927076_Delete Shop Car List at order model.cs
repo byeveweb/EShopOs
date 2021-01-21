@@ -3,7 +3,7 @@ namespace EShopOS.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class DeleteShopCarListatordermodel : DbMigration
     {
         public override void Up()
         {
@@ -12,29 +12,13 @@ namespace EShopOS.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        ShopCar_Id = c.Int(nullable: false),
                         CreatedDateOrder = c.DateTime(nullable: false),
                         OrderStatus = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ShopCars", t => t.ShopCar_Id, cascadeDelete: true)
-                .Index(t => t.ShopCar_Id);
-            
-            CreateTable(
-                "dbo.ShopCars",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
                         User_Id = c.String(maxLength: 128),
-                        Product_Id = c.Int(nullable: false),
-                        Quantity = c.Int(nullable: false),
-                        TotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Products", t => t.Product_Id, cascadeDelete: true)
                 .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
-                .Index(t => t.User_Id)
-                .Index(t => t.Product_Id);
+                .Index(t => t.User_Id);
             
             CreateTable(
                 "dbo.Products",
@@ -46,8 +30,11 @@ namespace EShopOS.DAL.Migrations
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Stock = c.Int(nullable: false),
                         ProductStatus = c.Int(nullable: false),
+                        Order_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Orders", t => t.Order_Id)
+                .Index(t => t.Order_Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -128,28 +115,25 @@ namespace EShopOS.DAL.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Orders", "ShopCar_Id", "dbo.ShopCars");
-            DropForeignKey("dbo.ShopCars", "User_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Orders", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.ShopCars", "Product_Id", "dbo.Products");
+            DropForeignKey("dbo.Products", "Order_Id", "dbo.Orders");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.ShopCars", new[] { "Product_Id" });
-            DropIndex("dbo.ShopCars", new[] { "User_Id" });
-            DropIndex("dbo.Orders", new[] { "ShopCar_Id" });
+            DropIndex("dbo.Products", new[] { "Order_Id" });
+            DropIndex("dbo.Orders", new[] { "User_Id" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.Products");
-            DropTable("dbo.ShopCars");
             DropTable("dbo.Orders");
         }
     }
