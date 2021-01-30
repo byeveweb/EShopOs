@@ -35,7 +35,7 @@ namespace EShopOS.Web.Client
                 row.Cells.Add(new TableCell { Text = string.Format(product.Price.ToString() )});
                 row.Cells.Add(new TableCell { Text = string.Format(product.Stock.ToString() )});
                 row.Cells.Add(new TableCell { Text = string.Format(product.ProductStatus.ToString() )});
-
+                row.Cells.Add(new TableCell { Text = string.Format("Añadir") });
 
                 tbody.Controls.Add(row);
             }

@@ -45,10 +45,8 @@ namespace EShopOS.Core
         /// </summary>
         public ApplicationUser User { get; set; }
 
-        /// <summary>
-        /// Lista de mensajes
-        /// </summary>
-        public virtual List<Product> Products { get; set; }
+
+        public virtual List<OrderDetail> OrderDetails { get; set; }
 
     }
 }

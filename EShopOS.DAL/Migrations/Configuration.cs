@@ -10,6 +10,7 @@ namespace EShopOS.DAL.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "EShopOS.DAL.ApplicationDbContext";
         }
 
         protected override void Seed(EShopOS.DAL.ApplicationDbContext context)

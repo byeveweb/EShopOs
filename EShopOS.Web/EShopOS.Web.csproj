@@ -166,8 +166,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Client\OrdersFiles\OrderCreate.aspx" />
     <Content Include="Client\ProductsFiles\ProductDtl.aspx" />
-    <Content Include="Client\ProductsFiles\ProductEdit.aspx" />
+    <Content Include="Client\ProductsFiles\ProductCreateUpdate.aspx" />
     <Content Include="Client\ProductsFiles\ProductList.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -342,6 +343,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Client\OrdersFiles\OrderCreate.aspx.cs">
+      <DependentUpon>OrderCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\OrdersFiles\OrderCreate.aspx.designer.cs">
+      <DependentUpon>OrderCreate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\ProductsFiles\ProductDtl.aspx.cs">
       <DependentUpon>ProductDtl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -349,12 +357,12 @@
     <Compile Include="Client\ProductsFiles\ProductDtl.aspx.designer.cs">
       <DependentUpon>ProductDtl.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductEdit.aspx.cs">
-      <DependentUpon>ProductEdit.aspx</DependentUpon>
+    <Compile Include="Client\ProductsFiles\ProductCreateUpdate.aspx.cs">
+      <DependentUpon>ProductCreateUpdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductEdit.aspx.designer.cs">
-      <DependentUpon>ProductEdit.aspx</DependentUpon>
+    <Compile Include="Client\ProductsFiles\ProductCreateUpdate.aspx.designer.cs">
+      <DependentUpon>ProductCreateUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\ProductsFiles\ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>

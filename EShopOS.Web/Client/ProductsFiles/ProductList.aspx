@@ -12,6 +12,8 @@
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Status</th>
+                <th>Añadir al carrito</th>
+
             </tr>
         </thead>
                 <tbody id="tbody" runat="server">            
