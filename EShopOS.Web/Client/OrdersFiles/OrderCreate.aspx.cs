@@ -17,7 +17,6 @@ namespace EShopOS.Web.Client.OrdersFiles
         ApplicationDbContext context = null;
         OrderManager orderManager = null;
         ProductManager productManager = null;
-        Product product = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -79,31 +78,31 @@ namespace EShopOS.Web.Client.OrdersFiles
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Order order = new Order
-            {
-                CreatedDateOrder = DateTime.Now,
-                OrderStatus = OrderStatus.Open,
-                User_Id = "",// HttpContext.Current.User.Identity.GetUserId()
-                OrderDetails = new List<OrderDetail>()
-            };
-            order.OrderDetails.Add(new OrderDetail
-            {
-                Price = Int32.Parse(priceProduct.Text),
-                Quantity = Int32.Parse(cantidad.Text),
-                Total = Int32.Parse(total.Text),
-                Product_Id = 1
-            });
-            order.OrderDetails.Add(new OrderDetail
-            {
-                Price = Int32.Parse(priceProduct.Text),
-                Quantity = Int32.Parse(cantidad.Text),
-                Total = Int32.Parse(total.Text),
-                Product_Id = 2
-            });
+            //Order order = new Order
+            //{
+            //    CreatedDateOrder = DateTime.Now,
+            //    OrderStatus = OrderStatus.Open,
+            //    User_Id = "",// HttpContext.Current.User.Identity.GetUserId()
+            //    OrderDetails = new List<OrderDetail>()
+            //};
+            //order.OrderDetails.Add(new OrderDetail
+            //{
+            //    Price = Int32.Parse(priceProduct.Text),
+            //    Quantity = Int32.Parse(cantidad.Text),
+            //    Total = Int32.Parse(total.Text),
+            //    Product_Id = 1
+            //});
+            //order.OrderDetails.Add(new OrderDetail
+            //{
+            //    Price = Int32.Parse(priceProduct.Text),
+            //    Quantity = Int32.Parse(cantidad.Text),
+            //    Total = Int32.Parse(total.Text),
+            //    Product_Id = 2
+            //});
 
-            orderManager.Add(order);
-            orderManager.Context.SaveChanges();
-            Response.Redirect("home");
+            //orderManager.Add(order);
+            //orderManager.Context.SaveChanges();
+            //Response.Redirect("home");
 
         }
 

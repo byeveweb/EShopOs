@@ -15,30 +15,30 @@ namespace EShopOS.Web.Client.ProductsFiles
     {
 
         /// <summary>
-        /// Control txtId.
+        /// Control result.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField txtId;
+        protected global::System.Web.UI.WebControls.Label result;
 
         /// <summary>
-        /// Control txtNombreProducto.
+        /// Control Id.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtNombreProducto;
+        protected global::System.Web.UI.WebControls.HiddenField Id;
 
         /// <summary>
-        /// Control txtNameProduct.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNameProduct;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

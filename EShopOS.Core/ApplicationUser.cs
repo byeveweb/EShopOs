@@ -29,15 +29,12 @@ namespace EShopOS.Core
 
 
         /// <summary>
-        /// Nombre del cliente
+        /// Nombre y apellidos del cliente
         /// </summary>
-        public string FirstName { get; set; }
+        public string NameAndSurname { get; set; }
 
 
-        /// <summary>
-        /// Apellido del cliente
-        /// </summary>
-        public string LastName { get; set; }
+
 
 
         /// <summary>
@@ -50,10 +47,7 @@ namespace EShopOS.Core
         /// </summary>
         public string City { get; set; }
 
-        /// <summary>
-        /// Provincia del cliente
-        /// </summary>
-        public string Province { get; set; }
+
 
         /// <summary>
         /// Código postañ del cliente

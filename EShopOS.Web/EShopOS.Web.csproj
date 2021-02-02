@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Account\AddContactDateUser.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -167,15 +168,19 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Client\OrdersFiles\OrderCreate.aspx" />
+    <Content Include="Client\OrdersFiles\OrderDetail.aspx" />
     <Content Include="Client\ProductsFiles\ProductDtl.aspx" />
     <Content Include="Client\ProductsFiles\ProductCreateUpdate.aspx" />
     <Content Include="Client\ProductsFiles\ProductList.aspx" />
+    <Content Include="Client\ShoppingCart\ShoppingCartDetail.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controls\ProductControl.ascx" />
+    <Content Include="Controls\ShoppinCartControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -227,6 +232,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AddContactDateUser.aspx.cs">
+      <DependentUpon>AddContactDateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddContactDateUser.aspx.designer.cs">
+      <DependentUpon>AddContactDateUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -350,6 +362,13 @@
     <Compile Include="Client\OrdersFiles\OrderCreate.aspx.designer.cs">
       <DependentUpon>OrderCreate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Client\OrdersFiles\OrderDetail.aspx.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\OrdersFiles\OrderDetail.aspx.designer.cs">
+      <DependentUpon>OrderDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\ProductsFiles\ProductDtl.aspx.cs">
       <DependentUpon>ProductDtl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -374,12 +393,33 @@
     <Compile Include="Client\ProductsFiles\ProductServiceList.ashx.cs">
       <DependentUpon>ProductServiceList.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Client\ShoppingCart\ShoppingCartDetail.aspx.cs">
+      <DependentUpon>ShoppingCartDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ShoppingCart\ShoppingCartDetail.aspx.designer.cs">
+      <DependentUpon>ShoppingCartDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProductControl.ascx.cs">
+      <DependentUpon>ProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ProductControl.ascx.designer.cs">
+      <DependentUpon>ProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShoppinCartControl.ascx.cs">
+      <DependentUpon>ShoppinCartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ShoppinCartControl.ascx.designer.cs">
+      <DependentUpon>ShoppinCartControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -419,7 +459,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controls\" />
+    <Folder Include="Client\UserDetail\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

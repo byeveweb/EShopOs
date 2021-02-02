@@ -42,6 +42,8 @@ namespace EShopOS.DAL
         /// </summary>
         public DbSet<ShoppingCart> ShoppingCart { get; set; }
 
+     
+
 
 
 

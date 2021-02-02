@@ -1,9 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDtl.aspx.cs" Inherits="EShopOS.Web.Client.ProductsFiles.ProductDtl" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDtl.aspx.cs" Inherits="EShopOS.Web.Client.ProductsFiles.ProductDtl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Producto es: </h2>
+    <h2>Catálogo</h2>
     <hr />
-    <asp:HiddenField ID="txtId" runat="server" />
-    <asp:Label ID="txtNombreProducto" runat="server" Text="txtNombreProducto"></asp:Label>
-    <asp:TextBox ID="txtNameProduct" runat="server" Text=""></asp:TextBox>
+    <asp:Label ID="result" runat="server"></asp:Label>
+    <asp:HiddenField ID="Id" runat="server" />
+    <asp:Button ID="Button1" runat="server" Text="Comprar" OnClick="Button1_Click" />
 </asp:Content>
+
+
+
 
