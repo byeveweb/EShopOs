@@ -4,7 +4,8 @@
     <hr />
     <asp:Label ID="result" runat="server"></asp:Label>
     <asp:HiddenField ID="Id" runat="server" />
-    <asp:Button ID="Button1" runat="server" Text="Comprar" OnClick="Button1_Click" />
+    <asp:Button ID="Button1" runat="server" Text="Comprar" OnClick="Button1_Click" CssClass="add-to-cart"/>
+     
 </asp:Content>
 
 

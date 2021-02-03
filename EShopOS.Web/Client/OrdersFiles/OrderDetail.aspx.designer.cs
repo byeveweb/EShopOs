@@ -13,23 +13,5 @@ namespace EShopOS.Web.Client.OrdersFiles
 
     public partial class OrderDetail
     {
-
-        /// <summary>
-        /// Control txtOrderId.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtOrderId;
-
-        /// <summary>
-        /// Control txtDateTime.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDateTime;
     }
 }

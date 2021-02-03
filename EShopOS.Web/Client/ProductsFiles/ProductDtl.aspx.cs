@@ -2,8 +2,10 @@
 using EShopOS.Core;
 using EShopOS.DAL;
 using EShopOS.Web.Controls;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -37,7 +39,8 @@ namespace EShopOS.Web.Client.ProductsFiles
                 content.Controls.Add(control);
             }
 
-            var carts = shoppingCartManager.GetAll();
+            string userId = HttpContext.Current.User.Identity.GetUserId();
+            var carts = shoppingCartManager.GetAll().Where(u=> u.User_Id == userId).Include(u=> u.User);
             var contentCart = (ContentPlaceHolder)Master.FindControl("MainContent");
 
 

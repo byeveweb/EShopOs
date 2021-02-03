@@ -52,7 +52,7 @@ namespace EShopOS.Web.Controls
 
             shoppingCartManager.Add(shoppingCart);
             shoppingCartManager.Context.SaveChanges();
-            Response.Redirect("home");
+            //Response.Redirect("home");
         }
     }
 }

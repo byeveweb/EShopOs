@@ -19,8 +19,6 @@ namespace EShopOS.Web.Controls
             txtProductId.Text = ShoppingCart.Product_Id.ToString();
             txtProductName.Text = ShoppingCart.Product.NameProduct.ToString();
             txtProductPrice.Text = ShoppingCart.Product.Price.ToString();
-
-
             txtQuantity.Text = ShoppingCart.Quantity.ToString();
         }
     }

@@ -30,9 +30,27 @@
             <asp:ListItem Value="3">3</asp:ListItem>
         </asp:DropDownList>
   <div class="card-text">
-      <asp:Button ID="Button1" runat="server" Text="Añadir Al carrito" OnClick="Button1_Click"  CssClass="btn btn-primary"/>
+      <asp:Button ID="Button1" runat="server" Text="Añadir Al carrito" OnClick="Button1_Click"  CssClass="btn btn-primary add"/>
   </div>
 </div>
+
+<script>
+import { each } from "jquery";
+         $('.add').on('click', function () {
+             var productId = $(this).data("shopping");
+             $.ajax({
+                 type: "POST",
+                 url: "../Controls/ShoppingCartControl.ascx",
+                 data: {  },
+                 success: function (data) {
+                     $.each(response, function (index, emp) {
+                         $('#carrito').append('<p>Id: ' + emp.ID + '</p>' +
+                             '<p>Id: ' + emp.Name + '</p>');
+                     }); 
+                 }
+             });
+         });
+</script>
 
 
 

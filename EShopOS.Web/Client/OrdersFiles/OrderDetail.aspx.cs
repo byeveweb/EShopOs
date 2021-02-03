@@ -25,10 +25,11 @@ namespace EShopOS.Web.Client.OrdersFiles
             orderManager = new OrderManager(context);
             productManager = new ProductManager(context);
 
-            //Traemos el 
+            //Traemos el id del usuario
             var idtext = Request.QueryString["Id"];
             int id = 0;
 
+            //
             order = orderManager.GetById(new object[] { id });
 
             //txtOrderId.Text = order.Id.ToString();

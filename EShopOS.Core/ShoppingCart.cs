@@ -48,11 +48,5 @@ namespace EShopOS.Core
         /// </summary>
         public int Quantity { get; set; }
 
-
-
-        /// <summary>
-        /// Poder incluir en el carrito el nombre de los productos su precio y 
-        /// </summary>
-        public virtual List<Product> Products { get; set; }
     }
 }
