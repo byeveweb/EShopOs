@@ -31,9 +31,11 @@ namespace EShopOS.Web.Client
             selStatusProduct.DataBind();
             selStatusProduct.SelectedValue = pS;
 
-            
 
-                var idtext = Request.QueryString["Id"];
+           
+
+
+            var idtext = Request.QueryString["Id"];
 
             if (idtext != null)
             {
@@ -45,18 +47,20 @@ namespace EShopOS.Web.Client
                     product = productManager.GetById(new object[] { id });
                     if (product != null)
                     {
-                        if(!Page.IsPostBack) { 
+                        
                             txtId.Value = product.Id.ToString();
                             txtNameProduct.Text = product.NameProduct;
                             txtDescriptionProduct.Text = product.Description;
                             txtPriceProduct.Text = product.Price.ToString();
                             txtStockProduct.Text = product.Stock.ToString();
                             selStatusProduct.Text = product.ProductStatus.ToString();
+                            
+
 
                             nuevoPd.Visible = false;
                             editarPd.Visible = true;
                             btnSubmit.Text = "Editar producto";
-                        }
+                        
                     }
                     else
                     {
@@ -80,7 +84,6 @@ namespace EShopOS.Web.Client
 
 
         }
-
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -106,7 +109,10 @@ namespace EShopOS.Web.Client
                 //Response.Redirect("ProductList.aspx");
                 //#endregion
 
-               
+                //Añadir Product
+
+                string path = Server.MapPath("~/Content/Images/") + FileUpload1.PostedFile.FileName;
+                FileUpload1.SaveAs(path);
 
                 product = new Product
                 {
@@ -114,9 +120,12 @@ namespace EShopOS.Web.Client
                     Description = txtDescriptionProduct.Text,
                     Price = Decimal.Parse(txtPriceProduct.Text),
                     Stock = Int32.Parse(txtStockProduct.Text),
-                    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
+                    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue),
+                    ImageUrl = "~/Content/images/" + FileUpload1.PostedFile.FileName,
+
                 };
 
+                productManager.Add(product);
                 productManager.Context.SaveChanges();
                 result.Text = "Producto guardado con exito.";
                 result.CssClass = "has-success";
@@ -166,5 +175,6 @@ namespace EShopOS.Web.Client
                 //TODO: Guardar un log con el error
             }
         }
+
     }
 }

@@ -37,6 +37,11 @@ namespace EShopOS.Core
         public int Stock { get; set; }
 
         /// <summary>
+        /// Imagen de la Product
+        /// </summary>
+        public string ImageUrl { get; set; }
+
+        /// <summary>
         /// EStado del producto Pedido (Disponible o no disponible)
         /// </summary>
         public ProductStatus ProductStatus { get; set; }

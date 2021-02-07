@@ -9,7 +9,8 @@
                 <asp:Label ID="txtNameProduct" runat="server" Text="" CssClass="card-title"></asp:Label>
             </div>
         <div class="image-product">
-            <img src="https://dummyimage.com/600x400/000/fff" />
+            <asp:Image ID="txtImageUrl" runat="server" ImageUrl="~/Content/Images/1.jpg" />
+<%--            <img src="https://dummyimage.com/600x400/000/fff" />--%>
         </div>
         <div class="pd-title font-size-25 box-product border-product ">
             <h5>Precio:</h5>

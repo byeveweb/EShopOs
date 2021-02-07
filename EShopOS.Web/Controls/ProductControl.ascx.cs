@@ -42,6 +42,8 @@ namespace EShopOS.Web.Controls
                 txtPrice.Text = Product.Price.ToString();
                 txtStock.Text = Product.Stock.ToString();
                 txtProductStatus.Text = Product.ProductStatus.ToString();
+                txtImageUrl.ImageUrl = Product.ImageUrl;
+
             
 
             //Determinamos si está o no logueado
@@ -55,8 +57,7 @@ namespace EShopOS.Web.Controls
                 AddCart.Visible = true; ; ;
             }
 
-            //Recogemos selectedValue
-            //string QuantitySelected = QuantityProduct.SelectedValue;
+
 
         }
 

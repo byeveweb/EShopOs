@@ -75,6 +75,10 @@
     <Compile Include="Migrations\202102021636117_quitarRelacionSobrante.Designer.cs">
       <DependentUpon>202102021636117_quitarRelacionSobrante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102072032595_UploadImageProduct.cs" />
+    <Compile Include="Migrations\202102072032595_UploadImageProduct.Designer.cs">
+      <DependentUpon>202102072032595_UploadImageProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102021636117_quitarRelacionSobrante.resx">
       <DependentUpon>202102021636117_quitarRelacionSobrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102072032595_UploadImageProduct.resx">
+      <DependentUpon>202102072032595_UploadImageProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

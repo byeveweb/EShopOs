@@ -40,8 +40,10 @@
                                     <asp:RequiredFieldValidator CssClass="form-text text-muted" ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio" ControlToValidate="txtPriceProduct" Text="Campo obligatorio"></asp:RequiredFieldValidator>
                                 </div>
                             <div class="form-group">
-                                    <label for="exampleFormControlFile1">Subir imagen</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <label for="exampleFormControlFile1">Subir imagen</label>
+                                    <asp:FileUpload ID="FileUpload1" runat="server" /> 
+                                     <asp:Image ID="Image1" runat="server" /> 
+
                                 </div>
                         </div>
 

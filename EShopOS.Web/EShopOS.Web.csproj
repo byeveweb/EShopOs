@@ -481,6 +481,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Client\UserDetail\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
