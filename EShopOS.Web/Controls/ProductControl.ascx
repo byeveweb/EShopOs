@@ -1,38 +1,46 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProductControl.ascx.cs" Inherits="EShopOS.Web.Controls.ProductControl" %>
+<div class="col-md-5 margin-r-1 ">
+    <div class="bg-white product-detail">
+        <div class="box-product">
+            <asp:Label ID="txtProductId" runat="server" Text="" CssClass="cl-pr-id"></asp:Label>
+             - <asp:Label ID="txtProductStatus" runat="server" Text="" CssClass="cl-pr-id"></asp:Label>
+        </div>
+            <div class="pd-title font-fantastic font-size-25  margin-t-1 box-product">
+                <asp:Label ID="txtNameProduct" runat="server" Text="" CssClass="card-title"></asp:Label>
+            </div>
+        <div class="image-product">
+            <img src="https://dummyimage.com/600x400/000/fff" />
+        </div>
+        <div class="pd-title font-size-25 box-product border-product ">
+            <h5>Precio:</h5>
+            <asp:Label ID="txtPrice" runat="server" Text="" CssClass="price"></asp:Label>€
+        </div>
+ 
+        <div class="pd-title font-size-25 box-product border-product">
+            <h5>Stock:</h5>
+             <asp:Label ID="txtStock" runat="server" Text="" CssClass="price"></asp:Label>
+        </div>
 
-
-
-
-
-<div class="card col-md-4">
-  <div class="card-body">
-        <asp:Label ID="txtNameProduct" runat="server" Text="" CssClass="card-title"></asp:Label>
-    </div>
-    <div class="card-text">
-        <asp:Label ID="txtDescription" runat="server" Text="" CssClass="card-text"></asp:Label>
+        <div class="pd-title font-size-25 box-product border-product ">
+            <asp:Label ID="txtDescription" runat="server" Text="" CssClass="description-product"></asp:Label>
+        </div>
+        <form>
+           <div class="form-group box-product title-select">
+                <label for="QuantityProduct" class="margin-r-1">Cantidad</label>
+                <asp:DropDownList ID="QuantityProduct" runat="server" CssClass="form-control">
+                    <asp:ListItem Value="1">1</asp:ListItem>
+                    <asp:ListItem Value="2">2</asp:ListItem>
+                    <asp:ListItem Value="3">3</asp:ListItem>
+                 </asp:DropDownList>
+          </div>
+        </form>
+       <div class="box-product text-center">
+        <asp:Button ID="AddCart" runat="server" Text="Añadir Al carrito" OnClick="AddCart_Click"  CssClass="btn-pink-light btn add" Visible="false"/>
        </div>
-  <ul class="list-group list-group-flush">
-      
-       <asp:Label ID="ProductId" runat="server" Text="" CssClass="list-group-item"></asp:Label>
-      <p>Precio</p>
-
-      <asp:Label ID="txtPrice" runat="server" Text="" CssClass="list-group-item"></asp:Label>
-      <p>Stock</p>
-
-        <asp:Label ID="txtStock" runat="server" Text="" CssClass="list-group-item"></asp:Label>
-      <p>Disponibilidad</p>
-
-        <asp:Label ID="txtProductStatus" runat="server" Text="" CssClass="list-group-item"></asp:Label>
-  </ul>
-            <asp:DropDownList ID="type" runat="server">
-            <asp:ListItem Value="1">1</asp:ListItem>
-            <asp:ListItem Value="2">2</asp:ListItem>
-            <asp:ListItem Value="3">3</asp:ListItem>
-        </asp:DropDownList>
-  <div class="card-text">
-      <asp:Button ID="Button1" runat="server" Text="Añadir Al carrito" OnClick="Button1_Click"  CssClass="btn btn-primary add"/>
-  </div>
+     </div>
 </div>
+
+
 
 <script>
 import { each } from "jquery";

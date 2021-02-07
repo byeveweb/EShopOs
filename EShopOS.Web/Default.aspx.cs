@@ -13,5 +13,15 @@ namespace EShopOS.Web
         {
 
         }
+
+        protected void AccesCat_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Client/ProductsFiles/ProductCat.aspx");
+        }
+
+        protected void CatAccss_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Client/ProductsFiles/ProductCat.aspx");
+        }
     }
 }

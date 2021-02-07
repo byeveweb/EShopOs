@@ -15,6 +15,24 @@ namespace EShopOS.Web.Controls
     {
 
         /// <summary>
+        /// Control txtProductId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtProductId;
+
+        /// <summary>
+        /// Control txtProductStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtProductStatus;
+
+        /// <summary>
         /// Control txtNameProduct.
         /// </summary>
         /// <remarks>
@@ -22,24 +40,6 @@ namespace EShopOS.Web.Controls
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtNameProduct;
-
-        /// <summary>
-        /// Control txtDescription.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDescription;
-
-        /// <summary>
-        /// Control ProductId.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProductId;
 
         /// <summary>
         /// Control txtPrice.
@@ -60,30 +60,30 @@ namespace EShopOS.Web.Controls
         protected global::System.Web.UI.WebControls.Label txtStock;
 
         /// <summary>
-        /// Control txtProductStatus.
+        /// Control txtDescription.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtProductStatus;
+        protected global::System.Web.UI.WebControls.Label txtDescription;
 
         /// <summary>
-        /// Control type.
+        /// Control QuantityProduct.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList type;
+        protected global::System.Web.UI.WebControls.DropDownList QuantityProduct;
 
         /// <summary>
-        /// Control Button1.
+        /// Control AddCart.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button AddCart;
     }
 }

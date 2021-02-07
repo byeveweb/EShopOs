@@ -34,9 +34,6 @@ namespace EShopOS.Core
         public string NameAndSurname { get; set; }
 
 
-
-
-
         /// <summary>
         /// Calle del cliente
         /// </summary>

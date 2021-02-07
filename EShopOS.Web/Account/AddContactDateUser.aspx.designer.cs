@@ -78,15 +78,6 @@ namespace EShopOS.Web.Account
         protected global::System.Web.UI.WebControls.TextBox txtCodPostal;
 
         /// <summary>
-        /// Control PhoneNumber.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PhoneNumber;
-
-        /// <summary>
         /// Control error.
         /// </summary>
         /// <remarks>
@@ -94,5 +85,14 @@ namespace EShopOS.Web.Account
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label error;
+
+        /// <summary>
+        /// Control result.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label result;
     }
 }

@@ -11,7 +11,7 @@ namespace EShopOS.Web.Client.OrdersFiles
 {
 
 
-    public partial class OrderDetail
+    public partial class OrderDetail1
     {
     }
 }

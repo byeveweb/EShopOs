@@ -33,15 +33,25 @@ namespace EShopOS.Web.Account
 
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = manager.FindById(User.Identity.GetUserId());
+            try { 
 
-            if (!Page.IsPostBack)
+                if (!Page.IsPostBack)
+                {
+                    txtUserId.Text = user.Id.ToString();
+                    txtEmail.Text = user.Email;
+                    txtCity.Text = user.City;
+                    txtCodPostal.Text = user.PostalCode.ToString();
+                    txtPostalAddress.Text = user.PostalAddress;
+                    txtName.Text = user.NameAndSurname;
+                    //txtPhoneNumber.Text = user.PhoneNumber.ToString();
+                }
+            } catch
             {
-                txtUserId.Text = user.Id.ToString();
-                txtEmail.Text = user.Email;
-                txtCity.Text = user.City;
-                txtCodPostal.Text = user.PostalCode.ToString();
-                txtPostalAddress.Text = user.PostalAddress;
-                txtName.Text = user.NameAndSurname;
+                //TODO: error, no encontrado
+                result.Text = "No se ha encontrado la incidencia indicada";
+                result.CssClass = "has-error";
+
+
             }
 
         }
@@ -55,18 +65,13 @@ namespace EShopOS.Web.Account
                 CreatedDateOrder = DateTime.Now,
                 OrderStatus = OrderStatus.Open,
                 User_Id = userId,
-                OrderDetails = new List<OrderDetail>()
+                OrderDetails = new List<OrderDetail>(),
             };
 
-            var shoppingCarts = shoppingCartManager.GetAll().Include(u=> u.Product).Where(u => u.User_Id == userId);
-            foreach(var sh in shoppingCarts)
-            {
-                order.OrderDetails.Add(new OrderDetail { Price = sh.Product.Price, Product_Id = sh.Product_Id, Quantity = sh.Quantity });
-            }
-
+            var shoppingCarts = shoppingCartManager.GetAll().Include(u => u.Product).Where(u => u.User_Id == userId);
             foreach (var sh in shoppingCarts)
             {
-                shoppingCartManager.Remove(sh);
+                order.OrderDetails.Add(new OrderDetail { Price = sh.Product.Price, Product_Id = sh.Product_Id, Quantity = sh.Quantity });
             }
 
 
@@ -74,25 +79,11 @@ namespace EShopOS.Web.Account
             var currentUser = manager1.FindById(User.Identity.GetUserId()); 
             currentUser.PostalAddress = txtPostalAddress.Text; 
             manager1.Update(currentUser);
-            // Response.Redirect("home");
 
             orderManager.Add(order);
             orderManager.Context.SaveChanges();
-            Response.Redirect("~/Client/OrderFiles/OrderDetail.aspx");
-            //try
-            //{
-            //    var manager1 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
-            //    var currentUser = manager1.FindById(User.Identity.GetUserId());
-
-            //    currentUser.NameAndSurname = txtName.Text;
-            //    manager1.UpdateAsync(currentUser);
-            //    Response.Redirect("home");
-            //}
-            //catch(Exception ex)
-            //{
-            //         error.Text =   ex.ToString();
-
-            //}
+            Response.Redirect("~/Client/OrdersFiles/OrderConfirm?Id=" + order.Id);
+          
 
         }
     }

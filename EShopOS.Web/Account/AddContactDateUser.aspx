@@ -1,17 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddContactDateUser.aspx.cs" Inherits="EShopOS.Web.Account.AddContacDateUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="form-horizontal">
-        <h4>Agregar direción de entrega</h4>
+        <h2 class="font-fantastic">Agregar direción de entrega</h2>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <p class="text-danger">
             <asp:Literal runat="server" ID="ErrorMessage" />
         </p>
         <div class="form-group">
-            <h3>-Uusario</h3>
-        <asp:Label ID="txtUserId" runat="server" Text=""></asp:Label>
-        <asp:Label ID="txtEmail" runat="server" Text="" ></asp:Label>
+            <h3>Datos de usuario</h3>
+                <asp:Label ID="txtUserId" runat="server" Text="" Visible="False" CssClass="price"></asp:Label>
+                <asp:Label ID="txtEmail" runat="server" Text="" CssClass="datosUsuario"></asp:Label>
+
             </div>
+
+        <hr />
 
         
         <div class="form-group">
@@ -46,14 +49,14 @@
                     CssClass="text-danger" ErrorMessage="El campo txtCodPostal es obligatorio." />
             </div>
         </div>
-        <div class="form-group">
+        <%--div class="form-group">
             <asp:Label runat="server" AssociatedControlID="PhoneNumber" CssClass="col-md-2 control-label">Número de teléfono</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="PhoneNumber" CssClass="form-control" TextMode="Phone" />
+                <asp:TextBox runat="server" ID="txtPhoneNumber" CssClass="form-control" TextMode="Phone" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="PhoneNumber"
                     CssClass="text-danger" ErrorMessage="El campo PhoneNumber es obligatorio." />
             </div>
-        </div>
+        </div>--%>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -63,5 +66,6 @@
         </div>
     </div>
         <asp:Label ID="error" runat="server" Text=""></asp:Label>
+    <asp:Label ID="result" runat="server" Text="Label"></asp:Label>
 
 </asp:Content>

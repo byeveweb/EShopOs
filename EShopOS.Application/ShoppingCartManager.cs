@@ -20,15 +20,13 @@ namespace EShopOS.Application
 
         }
 
-
         /// <summary>
         /// Obtiene todas las incidencias de un usuario
         /// </summary>
         /// <param name="userId">Identificador de usuario</param>
         /// <returns>Incidencias del usuario</returns>
-        //public IQueryable<ShoppingCart> GetByUser(string userId)
-        //{
-        //    return Context.shoppingCarts.Where(e => e.User_Id == userId);
-        //}
+        //public IQueryable<Product> GetByProduct(string ProductId) => Context.Products.Where(e => e.Id == ProductId);
+
+
     }
 }

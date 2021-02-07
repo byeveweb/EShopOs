@@ -167,11 +167,14 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Client\OrdersFiles\OrderCreate.aspx" />
+    <Content Include="Admin\Index.aspx" />
+    <Content Include="Admin\OrderUpdate.aspx" />
+    <Content Include="Admin\OrderList.aspx" />
+    <Content Include="Client\OrdersFiles\OrderConfirm.aspx" />
     <Content Include="Client\OrdersFiles\OrderDetail.aspx" />
-    <Content Include="Client\ProductsFiles\ProductDtl.aspx" />
-    <Content Include="Client\ProductsFiles\ProductCreateUpdate.aspx" />
-    <Content Include="Client\ProductsFiles\ProductList.aspx" />
+    <Content Include="Client\ProductsFiles\ProductCat.aspx" />
+    <Content Include="Admin\ProductDetailAndUpdate.aspx" />
+    <Content Include="Admin\ProductList.aspx" />
     <Content Include="Client\ShoppingCart\ShoppingCartDetail.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -194,7 +197,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
-    <Content Include="Client\ProductsFiles\ProductServiceList.ashx" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -344,6 +347,20 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -355,12 +372,19 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Client\OrdersFiles\OrderCreate.aspx.cs">
-      <DependentUpon>OrderCreate.aspx</DependentUpon>
+    <Compile Include="Admin\OrderUpdate.aspx.cs">
+      <DependentUpon>OrderUpdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Client\OrdersFiles\OrderCreate.aspx.designer.cs">
-      <DependentUpon>OrderCreate.aspx</DependentUpon>
+    <Compile Include="Admin\OrderUpdate.aspx.designer.cs">
+      <DependentUpon>OrderUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\OrdersFiles\OrderConfirm.aspx.cs">
+      <DependentUpon>OrderConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\OrdersFiles\OrderConfirm.aspx.designer.cs">
+      <DependentUpon>OrderConfirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\OrdersFiles\OrderDetail.aspx.cs">
       <DependentUpon>OrderDetail.aspx</DependentUpon>
@@ -369,29 +393,26 @@
     <Compile Include="Client\OrdersFiles\OrderDetail.aspx.designer.cs">
       <DependentUpon>OrderDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductDtl.aspx.cs">
-      <DependentUpon>ProductDtl.aspx</DependentUpon>
+    <Compile Include="Client\ProductsFiles\ProductCat.aspx.cs">
+      <DependentUpon>ProductCat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductDtl.aspx.designer.cs">
-      <DependentUpon>ProductDtl.aspx</DependentUpon>
+    <Compile Include="Client\ProductsFiles\ProductCat.aspx.designer.cs">
+      <DependentUpon>ProductCat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductCreateUpdate.aspx.cs">
-      <DependentUpon>ProductCreateUpdate.aspx</DependentUpon>
+    <Compile Include="Admin\ProductDetailAndUpdate.aspx.cs">
+      <DependentUpon>ProductDetailAndUpdate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductCreateUpdate.aspx.designer.cs">
-      <DependentUpon>ProductCreateUpdate.aspx</DependentUpon>
+    <Compile Include="Admin\ProductDetailAndUpdate.aspx.designer.cs">
+      <DependentUpon>ProductDetailAndUpdate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductList.aspx.cs">
+    <Compile Include="Admin\ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductList.aspx.designer.cs">
+    <Compile Include="Admin\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Client\ProductsFiles\ProductServiceList.ashx.cs">
-      <DependentUpon>ProductServiceList.ashx</DependentUpon>
     </Compile>
     <Compile Include="Client\ShoppingCart\ShoppingCartDetail.aspx.cs">
       <DependentUpon>ShoppingCartDetail.aspx</DependentUpon>

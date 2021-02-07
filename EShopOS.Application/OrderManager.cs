@@ -22,7 +22,7 @@ namespace EShopOS.Application
 
 
         /// <summary>
-        /// Obtiene todas las incidencias de un usuario
+        /// Obtiene todas las ordenes de un usuario
         /// </summary>
         /// <param name="userId">Identificador de usuario</param>
         /// <returns>Incidencias del usuario</returns>
