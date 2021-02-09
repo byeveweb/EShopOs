@@ -33,7 +33,8 @@ namespace EShopOS.Web.Account
 
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = manager.FindById(User.Identity.GetUserId());
-            try { 
+
+            try {
 
                 if (!Page.IsPostBack)
                 {
@@ -43,8 +44,14 @@ namespace EShopOS.Web.Account
                     txtCodPostal.Text = user.PostalCode.ToString();
                     txtPostalAddress.Text = user.PostalAddress;
                     txtName.Text = user.NameAndSurname;
-                    //txtPhoneNumber.Text = user.PhoneNumber.ToString();
+
+                    if(user.PhoneNumber != null ) { 
+                        txtPhoneNumber.Text = user.PhoneNumber.ToString();
+                    }
+
+                    txtPhoneNumber.Text = "sin telefono";
                 }
+
             } catch
             {
                 //TODO: error, no encontrado
@@ -59,6 +66,7 @@ namespace EShopOS.Web.Account
         protected void Comprar_Click(object sender, EventArgs e)
 
         {
+
             string userId = HttpContext.Current.User.Identity.GetUserId();
             Order order = new Order
             {
@@ -73,7 +81,6 @@ namespace EShopOS.Web.Account
             {
                 order.OrderDetails.Add(new OrderDetail { Price = sh.Product.Price, Product_Id = sh.Product_Id, Quantity = sh.Quantity });
             }
-
 
             var manager1 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var currentUser = manager1.FindById(User.Identity.GetUserId()); 

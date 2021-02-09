@@ -23,15 +23,26 @@ a, a:hover {
 
 /* Secction */
 .secction {
-    padding-top: 5rem;
+    padding-top: 2rem;
     padding-bottom: 5rem;
 }
+.no-mrg {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
 
+.no-pdd {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
 .title {
     background: #611047;
     padding-bottom: 2rem;
     border-radius: 20px;
+}
 
+.bold {
+    font-weight: 600 !important;
 }
 
 h1, .h1 {
@@ -43,6 +54,11 @@ h1, .h1 {
     margin: 0;
 }
 
+.df-jf {
+    display: flex !important;
+    justify-content: flex-start;
+    align-content: center;
+}
 
 h2 {
     font-size: 4.5rem;
@@ -97,6 +113,10 @@ h2 {
     padding: 1rem;
 }
 
+.p-05 {
+    padding: .5rem;
+}
+
 .text-box {
 
     display: block;
@@ -129,7 +149,7 @@ h3, .h3 {
 }
 
 .box-dates {
-    height: 250px;
+    height: 270px;
 }
 
 .label-one {
@@ -191,13 +211,18 @@ h5, .title-select {
     letter-spacing: 2px;
     color: #41002C;
     align-items: center;
+
 }
 
-.lineacarrito {
-    padding: 1.5rem;
-    border-top: 1px solid #eee;
-    width: 100%;
-}
+    .title-select {
+        width:200px;
+    }
+
+    .lineacarrito {
+        padding: 1.5rem;
+        border-top: 1px solid #eee;
+        width: 100%;
+    }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -212,6 +237,7 @@ h5, .title-select {
 .df-jf-start {
     display: flex !important;
     justify-content: flex-end;
+    align-content: center;
 }
 
 .bg-white {
@@ -219,8 +245,6 @@ h5, .title-select {
 }
 
 .product-detail {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
     -webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.35);
     -moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.35);
     box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.35);
@@ -244,6 +268,9 @@ h5, .title-select {
     border-bottom: 1px solid #d4d4d4;
 }
 
+.margin-15 {
+    margin: 1.5rem;
+}
 .margin-b-1 {
     margin-bottom: 1rem;
 }
@@ -294,7 +321,9 @@ h5, .title-select {
 .text-center {
     text-align: center;
 }
-
+.text-right {
+    text-align: right;
+}
 .btn-pink-dark {
     border: 1px solid #C382AE;
     color: #C382AE;

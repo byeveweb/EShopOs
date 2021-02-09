@@ -33,13 +33,13 @@ namespace EShopOS.Web.Client.OrdersFiles
         protected global::System.Web.UI.WebControls.Label txtEmail;
 
         /// <summary>
-        /// Control txtPostalCode.
+        /// Control txtPhoneNumber.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtPostalCode;
+        protected global::System.Web.UI.WebControls.Label txtPhoneNumber;
 
         /// <summary>
         /// Control txtPostalAddress.
@@ -60,22 +60,13 @@ namespace EShopOS.Web.Client.OrdersFiles
         protected global::System.Web.UI.WebControls.Label txtCity;
 
         /// <summary>
-        /// Control txtPhoneNumber.
+        /// Control txtPostalCode.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtPhoneNumber;
-
-        /// <summary>
-        /// Control txtNameAndSurname.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtNameAndSurname;
+        protected global::System.Web.UI.WebControls.Label txtPostalCode;
 
         /// <summary>
         /// Control txtOrderId.
@@ -103,15 +94,6 @@ namespace EShopOS.Web.Client.OrdersFiles
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtOrderStatus;
-
-        /// <summary>
-        /// Control txtUserId.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtUserId;
 
         /// <summary>
         /// Control tbody.

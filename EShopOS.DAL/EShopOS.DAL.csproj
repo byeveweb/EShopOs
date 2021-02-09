@@ -79,6 +79,10 @@
     <Compile Include="Migrations\202102072032595_UploadImageProduct.Designer.cs">
       <DependentUpon>202102072032595_UploadImageProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102091640540_UploadShoppingCartwithTotalFile.cs" />
+    <Compile Include="Migrations\202102091640540_UploadShoppingCartwithTotalFile.Designer.cs">
+      <DependentUpon>202102091640540_UploadShoppingCartwithTotalFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102072032595_UploadImageProduct.resx">
       <DependentUpon>202102072032595_UploadImageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102091640540_UploadShoppingCartwithTotalFile.resx">
+      <DependentUpon>202102091640540_UploadShoppingCartwithTotalFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

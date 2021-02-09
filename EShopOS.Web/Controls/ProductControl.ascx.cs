@@ -43,8 +43,10 @@ namespace EShopOS.Web.Controls
                 txtStock.Text = Product.Stock.ToString();
                 txtProductStatus.Text = Product.ProductStatus.ToString();
                 txtImageUrl.ImageUrl = Product.ImageUrl;
+                AddCart.Attributes.Add("data-id", Product.Id.ToString());
 
-            
+
+
 
             //Determinamos si está o no logueado
             bool isAuth = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
@@ -61,20 +63,6 @@ namespace EShopOS.Web.Controls
 
         }
 
-        protected void AddCart_Click(object sender, EventArgs e)
-        {
-            
-            ShoppingCart shoppingCart = new ShoppingCart
-            {
- 
-                Product_Id = Int32.Parse(txtProductId.Text),
-                User_Id = HttpContext.Current.User.Identity.GetUserId(),
-                Quantity = Int32.Parse(QuantityProduct.SelectedValue),
-        };
-
-
-            shoppingCartManager.Add(shoppingCart);
-            shoppingCartManager.Context.SaveChanges();
-        }
+        
     }
 }

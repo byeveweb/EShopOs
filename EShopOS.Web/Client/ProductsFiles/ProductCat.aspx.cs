@@ -40,24 +40,32 @@ namespace EShopOS.Web.Client.ProductsFiles
             string userId = HttpContext.Current.User.Identity.GetUserId();
             var carts = shoppingCartManager.GetAll().Where(u=> u.User_Id == userId).Include(u=> u.User);
             var contentCart = (ContentPlaceHolder)Master.FindControl("Carrito");
-
+            decimal su = 0;
 
             foreach (var cart in carts)
             {
                 var controlC = (ShoppinCartControl)Page.LoadControl("~/Controls/ShoppinCartControl.ascx");
                 controlC.ShoppingCart = cart;
                 contentCart.Controls.Add(controlC);
+
+                su += cart.Total;
+                
             }
 
 
+            //Sumamos el total de las celdas
+            txtTotalismo.Text = su.ToString(); 
 
 
+
+            //Determinamos si está autenticado
             bool isAuth = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
 
             if (!isAuth)
             {
                 Buy.Enabled= false;
                 alert.Visible = true;
+                total.Visible = false;
             }
 
             else
@@ -65,6 +73,7 @@ namespace EShopOS.Web.Client.ProductsFiles
 
                 Buy.Enabled = true;
                 alert.Visible = false;
+                total.Visible = true;
             }
 
         }

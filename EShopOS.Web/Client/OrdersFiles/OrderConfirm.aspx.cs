@@ -39,10 +39,9 @@ namespace EShopOS.Web.Client.OrdersFiles
                 txtUsername.Text = cart.User.NameAndSurname;
                 txtEmail.Text = cart.User.Email;
                 txtPostalCode.Text = cart.User.PostalCode.ToString();
-                txtPostalCode.Text = cart.User.PostalCode.ToString();
                 txtPostalAddress.Text = cart.User.PostalAddress;
                 txtCity.Text = cart.User.City;
-               // txtPhoneNumber.Text = cart.User.PhoneNumber.ToString();
+                txtPhoneNumber.Text = cart.User.PhoneNumber.ToString();
             }
 
             //Datos de la orden
@@ -50,24 +49,27 @@ namespace EShopOS.Web.Client.OrdersFiles
 
             var od = orderManager.GetById(new object[] { idtext });
             txtOrderId.Text = od.Id.ToString();
-            txtUserId.Text = od.User_Id.ToString();
+            //txtUserId.Text = od.User_Id.ToString();
             txtCreateOrder.Text = od.CreatedDateOrder.ToString("dd/MM/yyyy");
             txtOrderStatus.Text = od.OrderStatus.ToString();
 
 
 
             //datos de producto
+
             var products = shoppingCartManager.GetAll().Where(u => u.User_Id == userId).Include(sc => sc.User).Include(pr => pr.Product);
             string formatlink = "<a href='ProductDtl.aspx?Id={0}'>{1}</a>";
 
             foreach (var pdr in products)
             {
                 var row = new TableRow();
+                row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Product.Id.ToString()) });
                 row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Product.NameProduct.ToString()) });
-                row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Product.Description.ToString()) });
                 row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Product.Price.ToString()) });
-                row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Product.Stock.ToString()) });
-                row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Product.ProductStatus.ToString()) });
+                row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Quantity.ToString()) });
+                row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Quantity.ToString()) });
+
+                //  row.Cells.Add(new TableCell { Text = string.Format(formatlink, pdr.Id, pdr.Product.ProductStatus.ToString()) });
                 tbody.Controls.Add(row);
 
 

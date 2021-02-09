@@ -47,18 +47,20 @@ namespace EShopOS.Web.Client
                     product = productManager.GetById(new object[] { id });
                     if (product != null)
                     {
-                        
+                            if (!Page.IsPostBack) { 
+
                             txtId.Value = product.Id.ToString();
                             txtNameProduct.Text = product.NameProduct;
                             txtDescriptionProduct.Text = product.Description;
                             txtPriceProduct.Text = product.Price.ToString();
                             txtStockProduct.Text = product.Stock.ToString();
                             selStatusProduct.Text = product.ProductStatus.ToString();
-                            
+                            txtIdProduct.Text = product.Id.ToString();
+                            }
 
-
-                            nuevoPd.Visible = false;
+                        nuevoPd.Visible = false;
                             editarPd.Visible = true;
+                            txtShowId.Visible = true;
                             btnSubmit.Text = "Editar producto";
                         
                     }
@@ -68,6 +70,7 @@ namespace EShopOS.Web.Client
                         result.Text = "No se ha encontrado la incidencia indicada";
                         nuevoPd.Visible =  true;
                         editarPd.Visible = false;
+                        txtShowId.Visible = false;
                     }
                 }
                 else
@@ -90,83 +93,90 @@ namespace EShopOS.Web.Client
 
             try
             {
-                //if (String.IsNullOrWhiteSpace(txtId.Value))
-                //{
-                //#region insertar
-                //product = new Product
-                //{
-                //    NameProduct = txtNameProduct.Text,
-                //    Description = txtDescriptionProduct.Text,
-                //    Price = Decimal.Parse(txtPriceProduct.Text),
-                //    Stock = Int32.Parse(txtStockProduct.Text),
-                //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
-                //};
-
-
-
-                //productManager.Add(product);
-                //context.SaveChanges();
-                //Response.Redirect("ProductList.aspx");
-                //#endregion
-
-                //Añadir Product
-
-                string path = Server.MapPath("~/Content/Images/") + FileUpload1.PostedFile.FileName;
-                FileUpload1.SaveAs(path);
-
-                product = new Product
+                if (String.IsNullOrWhiteSpace(txtId.Value))
                 {
-                    NameProduct = txtNameProduct.Text,
-                    Description = txtDescriptionProduct.Text,
-                    Price = Decimal.Parse(txtPriceProduct.Text),
-                    Stock = Int32.Parse(txtStockProduct.Text),
-                    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue),
-                    ImageUrl = "~/Content/images/" + FileUpload1.PostedFile.FileName,
+                    #region insertar
+                    //product = new Product
+                    //{
+                    //    NameProduct = txtNameProduct.Text,
+                    //    Description = txtDescriptionProduct.Text,
+                    //    Price = Decimal.Parse(txtPriceProduct.Text),
+                    //    Stock = Int32.Parse(txtStockProduct.Text),
+                    //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
+                    //};
 
-                };
 
-                productManager.Add(product);
-                productManager.Context.SaveChanges();
-                result.Text = "Producto guardado con exito.";
-                result.CssClass = "has-success";
+
+                    //productManager.Add(product);
+                    //context.SaveChanges();
+                    //Response.Redirect("ProductList.aspx");
+                    #endregion
+
+                    //ADD NEW PRODUCT
+
+                    string path = Server.MapPath("~/Content/Images/") + FileUpload1.PostedFile.FileName;
+                    FileUpload1.SaveAs(path);
+
+                    product = new Product
+                    {
+                        NameProduct = txtNameProduct.Text,
+                        Description = txtDescriptionProduct.Text,
+                        Price = Decimal.Parse(txtPriceProduct.Text),
+                        Stock = Int32.Parse(txtStockProduct.Text),
+                        ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue),
+                        ImageUrl = "~/Content/images/" + FileUpload1.PostedFile.FileName,
+
+                    };
+
+                    productManager.Add(product);
+                    productManager.Context.SaveChanges();
+                    Response.Redirect("ProductList.aspx");
+                    //result.Text = "Producto guardado con exito.";
+                    //result.CssClass = "has-success";
 
                 
-            //} else
-            //    {
-            //        //#region insertar
-            //        //product = new Product
-            //        //{
-            //        //    NameProduct = txtNameProduct.Text,
-            //        //    Description = txtDescriptionProduct.Text,
-            //        //    Price = Decimal.Parse(txtPriceProduct.Text),
-            //        //    Stock = Int32.Parse(txtStockProduct.Text),
-            //        //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
-            //        //};
+                } else
+                {
+                    #region modificar
+                    //product = productManager.GetById(int.Parse(txtId.Value));
+                    product.NameProduct = txtNameProduct.Text;
+                    product.Description = txtDescriptionProduct.Text;
+                    product.Price = Decimal.Parse(txtPriceProduct.Text);
+                    product.Stock = Int32.Parse(txtStockProduct.Text);
+                    product.ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue);
+                    //        //product = new Product
+                    //        //{
+                    //        //    NameProduct = txtNameProduct.Text,
+                    //        //    Description = txtDescriptionProduct.Text,
+                    //        //    Price = Decimal.Parse(txtPriceProduct.Text),
+                    //        //    Stock = Int32.Parse(txtStockProduct.Text),
+                    //        //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
+                    //        //};
 
 
 
-            //        //productManager.Add(product);
-            //        //context.SaveChanges();
-            //        //Response.Redirect("ProductList.aspx");
-            //        //#endregion
-            //        //#region modificar
-            //        //product = new Product
-            //        //{
-            //        //    NameProduct = txtNameProduct.Text,
-            //        //    Description = txtDescriptionProduct.Text,
-            //        //    Price = Decimal.Parse(txtPriceProduct.Text),
-            //        //    Stock = Int32.Parse(txtStockProduct.Text),
-            //        //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
-            //        //};
+                    //        //productManager.Add(product);
+                    //        //context.SaveChanges();
+                    //        //Response.Redirect("ProductList.aspx");
+                    //        //#endregion
+                    //        //#region modificar
+                    //        //product = new Product
+                    //        //{
+                    //        //    NameProduct = txtNameProduct.Text,
+                    //        //    Description = txtDescriptionProduct.Text,
+                    //        //    Price = Decimal.Parse(txtPriceProduct.Text),
+                    //        //    Stock = Int32.Parse(txtStockProduct.Text),
+                    //        //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
+                    //        //};
 
-             
 
-            //        //#endregion
-            //    }
 
-                //productManager.Context.SaveChanges();
-                //result.Text = "Producto guardada con exito.";
-                //result.CssClass = "has-success";
+                    #endregion
+                }
+
+                productManager.Context.SaveChanges();
+                result.Text = "Producto guardada con exito.";
+                result.CssClass = "has-success";
             }
             catch (Exception ex)
             {

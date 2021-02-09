@@ -17,16 +17,24 @@
                   
 
                 </div>
-                <hr />
 
-                <div class="row">
-                    <h5>Id de producto: </h5>
-                    <asp:Label ID="txtIdProduct" runat="server" Text=""></asp:Label>
 
+                <div class="row p-15 link-section" >
+
+                    <div class="col-md-6"  id="txtShowId" Visible="false" runat="server">
+                            <h5>Id de producto: </h5>
+                            <asp:Label ID="txtIdProduct" runat="server" Text="" ></asp:Label>
+                     </div>
+               
+                     <div class="col-md-6">
+
+                          <div class="form-group ">
+                              <asp:Button ID="btnSubmit" runat="server" Text="Crear nuevo producto" OnClick="btnSubmit_Click" CssClass="btn btn-pink-dark"/>
+                            </div>
+                    </div>
                 </div>
-                <hr />
 
-                <div class="row">
+                <div class="row p-15">
 
                         <div class="col-md-6">
                                 <div class="form-group">
@@ -77,12 +85,7 @@
                   </div>
                 <hr />
 
-               <div class="row link-section p-15">
 
-                  <div class="form-group">
-                      <asp:Button ID="btnSubmit" runat="server" Text="Crear nuevo producto" OnClick="btnSubmit_Click" CssClass="btn btn-pink-dark"/>
-                    </div>
-                </div>
         </div>
 
 

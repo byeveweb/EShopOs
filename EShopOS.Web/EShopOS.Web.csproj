@@ -183,6 +183,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\ProductControl.ascx" />
+    <Content Include="Controls\ShopingCart.asmx" />
     <Content Include="Controls\ShoppinCartControl.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -201,6 +202,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\carts.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -434,6 +436,10 @@
     </Compile>
     <Compile Include="Controls\ProductControl.ascx.designer.cs">
       <DependentUpon>ProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShopingCart.asmx.cs">
+      <DependentUpon>ShopingCart.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ShoppinCartControl.ascx.cs">
       <DependentUpon>ShoppinCartControl.ascx</DependentUpon>

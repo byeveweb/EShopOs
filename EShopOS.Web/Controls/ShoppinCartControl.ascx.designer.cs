@@ -33,15 +33,6 @@ namespace EShopOS.Web.Controls
         protected global::System.Web.UI.WebControls.Label txtUserId;
 
         /// <summary>
-        /// Control txtProductId.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtProductId;
-
-        /// <summary>
         /// Control txtProductName.
         /// </summary>
         /// <remarks>
@@ -67,5 +58,14 @@ namespace EShopOS.Web.Controls
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtQuantity;
+
+        /// <summary>
+        /// Control txtTotal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtTotal;
     }
 }

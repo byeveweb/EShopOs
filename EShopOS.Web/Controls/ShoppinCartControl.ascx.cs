@@ -16,10 +16,11 @@ namespace EShopOS.Web.Controls
         {
             txtIdCart.Text = ShoppingCart.Id.ToString();
             txtUserId.Text = ShoppingCart.User_Id.ToString();
-            txtProductId.Text = ShoppingCart.Product_Id.ToString();
             txtProductName.Text = ShoppingCart.Product.NameProduct.ToString();
             txtProductPrice.Text = ShoppingCart.Product.Price.ToString();
             txtQuantity.Text = ShoppingCart.Quantity.ToString();
+            txtTotal.Text = ShoppingCart.Total.ToString();
+
         }
     }
 }

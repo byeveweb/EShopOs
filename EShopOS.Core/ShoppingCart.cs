@@ -19,12 +19,6 @@ namespace EShopOS.Core
         public int Id { get; set; }
 
 
-        /// <summary>
-        /// Id de la Orden de pedido a la que pertenece
-        /// </summary>
-        //[ForeignKey("Order")]
-        //public int Order_Id { get; set; }
-        //public Order Order { get; set; }
 
         /// <summary>
         /// Id del usuario que está comprando
@@ -47,6 +41,11 @@ namespace EShopOS.Core
         /// Cantidad de articulos añadidos a la cesta
         /// </summary>
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// Cantidad de articulos añadidos a la cesta
+        /// </summary>
+        public decimal Total { get; set; }
 
     }
 }

@@ -77,9 +77,9 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
-            <div class="row"">
+            <div class="row no-mrg">
 
-                <div class="col-md-8">
+                <div class="col-md-8 no-pdd">
                     
                         <asp:ContentPlaceHolder ID="Producto" runat="server">
                         </asp:ContentPlaceHolder>
