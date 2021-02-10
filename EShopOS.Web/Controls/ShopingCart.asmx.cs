@@ -39,32 +39,43 @@ namespace EShopOS.Web.Controls
             ProductManager productManager = new ProductManager(context);
 
             var pr = productManager.GetById(productId);
-            
-
             var user = HttpContext.Current.User.Identity.GetUserId();
+
+
+
+           
+
             var sc = scm.GetAll().Where(e => e.User_Id == user && e.Product_Id == productId).SingleOrDefault();
             decimal price = pr.Price;
+            decimal total = price * quantity;
 
 
+                if (sc != null) { 
+                    sc.Quantity = sc.Quantity + quantity;
+                    sc.Total = sc.Quantity * price;
+                    total = sc.Total;
+                }
 
-            if (sc != null) { 
-                sc.Quantity = sc.Quantity + quantity;
-                sc.Total = sc.Quantity * price;
-            }
+                else {
 
-            else {
-                ShoppingCart shoppingCart = new ShoppingCart
-                {
 
-                    Product_Id = productId,
-                    User_Id = user,
-                    Quantity = quantity,
-                    Total = sc.Total,
+                    ShoppingCart shoppingCart = new ShoppingCart
+                    {
 
-                };
-                scm.Add(shoppingCart);
-            }
-            scm.Context.SaveChanges();
+                        Product_Id = productId,
+                        User_Id = user,
+                        Quantity = quantity,
+                        Total = total,
+
+                    };
+
+                    scm.Add(shoppingCart);
+                }
+
+
+            
+
+
             return "hola";
         }
     }

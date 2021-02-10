@@ -1,12 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="EShopOS.Web.Client.ProductList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="secction">
-        <div class="title2">
-              <h2>Listado de productos</h2>
-        </div>
-        <div class="p-15  link-section">
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ProductDetailAndUpdate.aspx" CssClass="btn btn-pink-dark">Crear Nuevo Producto</asp:HyperLink>
-        </div>
+        <div class="pr-title ">
+                <h1 class="font-fantastic cl-dark">Listado de productos</h1>
+             </div>
+        <hr />
+    
            
 
         <table class="table p-15" id="products">
@@ -26,8 +25,18 @@
               </tbody>
             </table>
 
+            <div class="link-section">
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ProductDetailAndUpdate.aspx" CssClass="btn btn-pink-dark">Crear Nuevo Producto</asp:HyperLink>
+        </div>
+
      </div>
 
+     <script>
+         $(document).ready(function () {
 
-
+             $('.rm').on('click', function () {
+                 alert("delete");
+             })
+         });
+     </script>
 </asp:Content>

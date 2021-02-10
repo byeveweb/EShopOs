@@ -96,22 +96,13 @@ namespace EShopOS.Web.Client.OrdersFiles
         protected global::System.Web.UI.WebControls.Label txtOrderStatus;
 
         /// <summary>
-        /// Control tbody.
+        /// Control txtTotalismo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbody;
-
-        /// <summary>
-        /// Control Total.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Total;
+        protected global::System.Web.UI.WebControls.Label txtTotalismo;
 
         /// <summary>
         /// Control buy_confirm.
@@ -121,5 +112,14 @@ namespace EShopOS.Web.Client.OrdersFiles
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button buy_confirm;
+
+        /// <summary>
+        /// Control tbody.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbody;
     }
 }

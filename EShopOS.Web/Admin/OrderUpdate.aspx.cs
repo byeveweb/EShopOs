@@ -16,18 +16,14 @@ namespace EShopOS.Web.Client.OrdersFiles
     public partial class OrderCreate : System.Web.UI.Page
     {
         ApplicationDbContext context = null;
-        ProductManager productManager = null;
-        ShoppingCartManager shoppingCartManager = null;
         OrderManager orderManager = null;
         OrderDetailManager orderDetailManager = null;
-        Order order = null;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // Traemos el contexto
             context = new ApplicationDbContext();
-            shoppingCartManager = new ShoppingCartManager(context);
-            productManager = new ProductManager(context);
             orderManager = new OrderManager(context);
             orderDetailManager = new OrderDetailManager(context);
 

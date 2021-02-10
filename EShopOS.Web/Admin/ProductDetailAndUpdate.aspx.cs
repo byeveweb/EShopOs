@@ -58,7 +58,7 @@ namespace EShopOS.Web.Client
                             txtIdProduct.Text = product.Id.ToString();
                             }
 
-                        nuevoPd.Visible = false;
+                            nuevoPd.Visible = false;
                             editarPd.Visible = true;
                             txtShowId.Visible = true;
                             btnSubmit.Text = "Editar producto";
@@ -131,44 +131,18 @@ namespace EShopOS.Web.Client
                     productManager.Add(product);
                     productManager.Context.SaveChanges();
                     Response.Redirect("ProductList.aspx");
-                    //result.Text = "Producto guardado con exito.";
-                    //result.CssClass = "has-success";
 
                 
                 } else
                 {
                     #region modificar
-                    //product = productManager.GetById(int.Parse(txtId.Value));
+                   
+
                     product.NameProduct = txtNameProduct.Text;
                     product.Description = txtDescriptionProduct.Text;
                     product.Price = Decimal.Parse(txtPriceProduct.Text);
                     product.Stock = Int32.Parse(txtStockProduct.Text);
                     product.ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue);
-                    //        //product = new Product
-                    //        //{
-                    //        //    NameProduct = txtNameProduct.Text,
-                    //        //    Description = txtDescriptionProduct.Text,
-                    //        //    Price = Decimal.Parse(txtPriceProduct.Text),
-                    //        //    Stock = Int32.Parse(txtStockProduct.Text),
-                    //        //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
-                    //        //};
-
-
-
-                    //        //productManager.Add(product);
-                    //        //context.SaveChanges();
-                    //        //Response.Redirect("ProductList.aspx");
-                    //        //#endregion
-                    //        //#region modificar
-                    //        //product = new Product
-                    //        //{
-                    //        //    NameProduct = txtNameProduct.Text,
-                    //        //    Description = txtDescriptionProduct.Text,
-                    //        //    Price = Decimal.Parse(txtPriceProduct.Text),
-                    //        //    Stock = Int32.Parse(txtStockProduct.Text),
-                    //        //    ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), selStatusProduct.SelectedValue)
-                    //        //};
-
 
 
                     #endregion

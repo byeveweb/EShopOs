@@ -23,7 +23,6 @@ namespace EShopOS.Web.Account
         ShoppingCartManager shoppingCartManager = null;
 
 
-
         protected void Page_Load(object sender, EventArgs e)
 
         {
@@ -44,12 +43,12 @@ namespace EShopOS.Web.Account
                     txtCodPostal.Text = user.PostalCode.ToString();
                     txtPostalAddress.Text = user.PostalAddress;
                     txtName.Text = user.NameAndSurname;
+                    txtPhoneNumber.Text = user.PhoneNumber.ToString();
+                    if (user.PhoneNumber != null ) { 
+                        
+                    } else { txtPhoneNumber.Text = "sin telefono"; }
 
-                    if(user.PhoneNumber != null ) { 
-                        txtPhoneNumber.Text = user.PhoneNumber.ToString();
-                    }
-
-                    txtPhoneNumber.Text = "sin telefono";
+                   
                 }
 
             } catch
@@ -68,6 +67,8 @@ namespace EShopOS.Web.Account
         {
 
             string userId = HttpContext.Current.User.Identity.GetUserId();
+
+            //Vamos a crear la orden
             Order order = new Order
             {
                 CreatedDateOrder = DateTime.Now,
@@ -76,21 +77,35 @@ namespace EShopOS.Web.Account
                 OrderDetails = new List<OrderDetail>(),
             };
 
+            //Vas a crear la tabla de Orders Details
             var shoppingCarts = shoppingCartManager.GetAll().Include(u => u.Product).Where(u => u.User_Id == userId);
+
             foreach (var sh in shoppingCarts)
             {
-                order.OrderDetails.Add(new OrderDetail { Price = sh.Product.Price, Product_Id = sh.Product_Id, Quantity = sh.Quantity });
+                order.OrderDetails.Add(new OrderDetail { Price = sh.Product.Price, Product_Id = sh.Product_Id, Quantity = sh.Quantity, Total = (int)sh.Total });
+                shoppingCartManager.Remove(sh); 
             }
 
+
+            //Actualizamoslos datos de Usuario
             var manager1 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var currentUser = manager1.FindById(User.Identity.GetUserId()); 
-            currentUser.PostalAddress = txtPostalAddress.Text; 
+            currentUser.PostalAddress = txtPostalAddress.Text;
+            currentUser.City = txtCity.Text;
+            currentUser.Email = txtEmail.Text;
+            currentUser.NameAndSurname = txtName.Text;
+            currentUser.PostalCode = Int32.Parse(txtCodPostal.Text);
+            currentUser.PhoneNumber = txtPhoneNumber.Text;
             manager1.Update(currentUser);
 
+            //Eliminamos cesta los datos
+            shoppingCartManager.Context.SaveChanges();
+
+            //añadimos Datos
             orderManager.Add(order);
             orderManager.Context.SaveChanges();
+           
             Response.Redirect("~/Client/OrdersFiles/OrderConfirm?Id=" + order.Id);
-          
 
         }
     }
