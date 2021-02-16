@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppinCartControl.ascx.cs" Inherits="EShopOS.Web.Controls.ShoppinCartControl" %>
-<div id="carrito" class="row">
+<div  class="row">
     <asp:Label ID="txtIdCart" runat="server" Text="" CssClass="card-title" Visible="False"></asp:Label>
     <asp:Label ID="txtUserId" runat="server" Text="" CssClass="card-title" Visible="False"></asp:Label>
     <div class="lineacarrito title-select">

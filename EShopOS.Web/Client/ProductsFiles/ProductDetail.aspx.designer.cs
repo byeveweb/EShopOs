@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EShopOS.Web.Controls
+namespace EShopOS.Web.Client.ProductsFiles
 {
 
 
-    public partial class ProductControl
+    public partial class ProductDetail
     {
 
         /// <summary>
@@ -69,24 +69,6 @@ namespace EShopOS.Web.Controls
         protected global::System.Web.UI.WebControls.Label txtPrice;
 
         /// <summary>
-        /// Control QuantityProduct.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList QuantityProduct;
-
-        /// <summary>
-        /// Control AddCart.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddCart;
-
-        /// <summary>
         /// Control txtDescription.
         /// </summary>
         /// <remarks>
@@ -96,12 +78,21 @@ namespace EShopOS.Web.Controls
         protected global::System.Web.UI.WebControls.Label txtDescription;
 
         /// <summary>
-        /// Control verPro.
+        /// Control error.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button verPro;
+        protected global::System.Web.UI.WebControls.Label error;
+
+        /// <summary>
+        /// Control result.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label result;
     }
 }

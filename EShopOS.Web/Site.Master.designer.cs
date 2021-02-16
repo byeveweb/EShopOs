@@ -15,6 +15,24 @@ namespace EShopOS.Web
     {
 
         /// <summary>
+        /// Control linkprd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor linkprd;
+
+        /// <summary>
+        /// Control A1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+
+        /// <summary>
         /// Control MainContent.
         /// </summary>
         /// <remarks>
@@ -33,12 +51,12 @@ namespace EShopOS.Web
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Producto;
 
         /// <summary>
-        /// Control Carrito.
+        /// Control CarritoShop.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Carrito;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder CarritoShop;
     }
 }

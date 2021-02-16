@@ -22,5 +22,9 @@ namespace EShopOS.Web.Admin
         {
             Response.Redirect("OrderList.aspx");
         }
+        protected void GoToUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserList.aspx");
+        }
     }
 }

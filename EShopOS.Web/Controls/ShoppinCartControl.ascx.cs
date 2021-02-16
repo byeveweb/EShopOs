@@ -15,7 +15,7 @@ namespace EShopOS.Web.Controls
         protected void Page_Load(object sender, EventArgs e)
         {
             txtIdCart.Text = ShoppingCart.Id.ToString();
-            txtUserId.Text = ShoppingCart.User_Id.ToString();
+            //txtUserId.Text = ShoppingCart.User_Id.ToString();
             txtProductName.Text = ShoppingCart.Product.NameProduct.ToString();
             txtProductPrice.Text = ShoppingCart.Product.Price.ToString();
             txtQuantity.Text = ShoppingCart.Quantity.ToString();

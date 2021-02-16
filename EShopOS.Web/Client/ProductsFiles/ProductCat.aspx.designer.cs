@@ -15,6 +15,15 @@ namespace EShopOS.Web.Client.ProductsFiles
     {
 
         /// <summary>
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+
+        /// <summary>
         /// Control total.
         /// </summary>
         /// <remarks>
@@ -31,15 +40,6 @@ namespace EShopOS.Web.Client.ProductsFiles
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtTotalismo;
-
-        /// <summary>
-        /// Control alert.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
 
         /// <summary>
         /// Control Buy.

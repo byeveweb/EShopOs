@@ -19,26 +19,39 @@ namespace EShopOS.Web.Admin
             context = new ApplicationDbContext();
             orderManager = new OrderManager(context);
 
-            var idtext = Request.QueryString["Id"];
-
-            var orders = orderManager
-                            .GetAll()
-                            .OrderBy(i => i.Id);
-            string formatlink = "<a href='OrderUpdate.aspx?Id={0}'>{1}</a>";
-
-
-            foreach (var or in orders)
+            try
             {
-                var row = new TableRow();
-                row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, or.Id.ToString()) });
-                row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, or.CreatedDateOrder.ToString()) });
-                row.Cells.Add(new TableCell { Text = string.Format(or.OrderStatus.ToString()) });
-                row.Cells.Add(new TableCell { Text = string.Format(or.User_Id.ToString()) });
-                row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, "Editar") });
-                row.Cells.Add(new TableCell { Text = string.Format("X") });
-                tbody.Controls.Add(row);
+
+                var idtext = Request.QueryString["Id"];
+
+                var orders = orderManager
+                                .GetAll()
+                                .OrderBy(i => i.Id);
+                string formatlink = "<a href='OrderUpdate.aspx?Id={0}'>{1}</a>";
+
+
+                foreach (var or in orders)
+                {
+                    var row = new TableRow();
+                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, or.Id.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, or.CreatedDateOrder.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(or.OrderStatus.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(or.User_Id.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, "Ver/Editar") });
+                    tbody.Controls.Add(row);
+                }
+
             }
+            catch
+            {
+
+                //TODO: error, no encontrado
+                result.Text = "No se ha encontrado la incidencia indicada";
+                result.CssClass = "has-error";
+
+
+            }
+        }
 
         }
     }
-}

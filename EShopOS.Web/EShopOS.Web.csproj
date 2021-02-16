@@ -170,12 +170,15 @@
     <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\OrderUpdate.aspx" />
     <Content Include="Admin\OrderList.aspx" />
+    <Content Include="Admin\UserList.aspx" />
     <Content Include="Client\OrdersFiles\OrderConfirm.aspx" />
     <Content Include="Client\OrdersFiles\OrderDetail.aspx" />
     <Content Include="Client\ProductsFiles\ProductCat.aspx" />
     <Content Include="Admin\ProductDetailAndUpdate.aspx" />
     <Content Include="Admin\ProductList.aspx" />
+    <Content Include="Client\ProductsFiles\ProductDetail.aspx" />
     <Content Include="Client\ShoppingCart\ShoppingCartDetail.aspx" />
+    <Content Include="Client\UserDetail\UserDetail.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -363,6 +366,13 @@
     <Compile Include="Admin\OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -416,12 +426,26 @@
     <Compile Include="Admin\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Client\ProductsFiles\ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ProductsFiles\ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\ShoppingCart\ShoppingCartDetail.aspx.cs">
       <DependentUpon>ShoppingCartDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Client\ShoppingCart\ShoppingCartDetail.aspx.designer.cs">
       <DependentUpon>ShoppingCartDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\UserDetail\UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\UserDetail\UserDetail.aspx.designer.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -458,6 +482,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\UserControls.cs" />
     <Compile Include="Models\ClientProductList.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -486,7 +511,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Client\UserDetail\" />
     <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>

@@ -29,40 +29,49 @@ namespace EShopOS.Web.Controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
+
+
             context = new ApplicationDbContext();
             shoppingCartManager = new ShoppingCartManager(context);
 
-            
-                // Pintamos los datos
-                txtProductId.Text = Product.Id.ToString();
-                txtNameProduct.Text = Product.NameProduct.ToString();
-                txtDescription.Text = Product.Description.ToString();
-                txtPrice.Text = Product.Price.ToString();
-                txtStock.Text = Product.Stock.ToString();
-                txtProductStatus.Text = Product.ProductStatus.ToString();
-                txtImageUrl.ImageUrl = Product.ImageUrl;
-                AddCart.Attributes.Add("data-id", Product.Id.ToString());
+
+            // Pintamos los datos
+            txtProductId.Text = Product.Id.ToString();
+            txtNameProduct.Text = Product.NameProduct.ToString();
+            txtDescription.Text = Product.Description.ToString();
+            txtPrice.Text = Product.Price.ToString();
+            txtStock.Text = Product.Stock.ToString();
+            txtProductStatus.Text = Product.ProductStatus.ToString();
+            txtImageUrl.ImageUrl = Product.ImageUrl;
+            AddCart.Attributes.Add("data-id", Product.Id.ToString());
 
 
 
 
             //Determinamos si está o no logueado
             bool isAuth = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
-  
-            if (!isAuth) {
-                AddCart.Visible= false;  }
 
-            else {
+            //if (!isAuth)
+            //{
+            //    AddCart.Visible = false;
+            //}
 
-                AddCart.Visible = true; ; ;
+            //else
+            //{
+
+            //    AddCart.Visible = true; ; ;
+            //}
+        }
+            protected void AddCart_Click(object sender, EventArgs e)
+            {
+                Response.Redirect("~/Account/AddContactDateUser.aspx");
             }
 
-
-
+        protected void verPro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Client/ProductsFiles/ProductDetail.aspx?Id=" + Product.Id);
         }
+    }
 
         
     }
-}

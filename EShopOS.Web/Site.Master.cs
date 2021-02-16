@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
+using System.Web.Optimization;
+using System.Web.Routing;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EShopOS.Core;
+using EShopOS.DAL;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EShopOS.Web
 {
     public partial class SiteMaster : MasterPage
     {
+       
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
@@ -69,6 +75,7 @@ namespace EShopOS.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
 
         }
 

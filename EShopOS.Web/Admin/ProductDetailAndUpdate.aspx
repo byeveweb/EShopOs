@@ -4,11 +4,11 @@
 
     <div class="secction">
          <asp:Label ID="result" runat="server"></asp:Label>
-
-            <div class="title2">
-                <h2 runat="server" id="nuevoPd" Visible="true">Crear Nuevo producto</h2>
-                <h2 runat="server" id="editarPd" Visible="false">Editar producto Nuevo producto</h2>
-            </div>
+                <div class="pr-title font-fantastic">
+                    <h1 runat="server" id="nuevoPd" Visible="true" class="h1 font-fantastic cl-dark">Crear Nuevo producto</h1>
+                    <h1 runat="server" id="editarPd" Visible="false" class="h1 font-fantastic cl-dark">Editar producto Nuevo producto</h1>
+                 </div>
+            <hr />
 
             <div class="p-15">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-primary" />

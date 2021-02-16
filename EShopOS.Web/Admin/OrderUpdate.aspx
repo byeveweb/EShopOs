@@ -35,7 +35,7 @@
              
                                     <div class="form-group p-1">
                                         <asp:Label ID="StatusOrder" runat="server"  Text="Status Orden" AssociatedControlID="selStatusOrder" CssClass="label-one"></asp:Label>
-                                        <asp:DropDownList ID="selStatusOrder" CssClass="form-control text-box label-two" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList ID="selStatusOrder" CssClass="form-control label-two" runat="server"></asp:DropDownList>
                                     </div>
 
                                </div>
@@ -69,6 +69,18 @@
 
                                </div>
                             </div>
+
+                    <div class="row">
+                         <div class="col-md-4 df-jf-start pr-button-up">
+                            <asp:Button ID="closeOrder" runat="server" Text="Cerrar Orden" CssClass="btn-pink-dark btn-lg btn" OnClick="closeOrder_Click"/>
+                        </div>
+                        <div class="col-md-4 df-jf-start pr-button-up">
+                            <asp:Button ID="processOrder" runat="server" Text="Procesar Orden" CssClass="btn-pink-dark btn-lg btn" OnClick="processOrder_Click"/>
+                        </div>
+                        <div class="col-md-4 df-jf-start pr-button-up">
+                            <asp:Button ID="deleteOrder" runat="server" Text="Eliminar Orden" CssClass="btn-pink-dark btn-lg btn" OnClick="deleteOrder_Click"/>
+                        </div>
+                    </div>
                     
                         <div class="row"> 
                             <div class="title2 ">
@@ -93,6 +105,8 @@
 
                         </div>
                     </div>
+             <asp:Label ID="error" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="result" runat="server" Text=""></asp:Label>
             </div>
 
 

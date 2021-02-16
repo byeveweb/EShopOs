@@ -1,5 +1,7 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProductControl.ascx.cs" Inherits="EShopOS.Web.Controls.ProductControl" %>
-<div class="col-md-12 no-pdd product-detail margin-b-1">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="EShopOS.Web.Client.ProductsFiles.ProductDetail" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="secction">
+    <div class="col-md-12 no-pdd product-detail margin-b-1">
     <div class="bg-white">
         <div class="row no-mrg " >
             <div class="col-md-4 no-pdd" >
@@ -31,39 +33,19 @@
                                 <asp:Label ID="txtPrice" runat="server" Text="" CssClass="price"></asp:Label>€
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <form>
-                               <div class="form-group title-select pd-title">
-                                    <asp:DropDownList ID="QuantityProduct" runat="server" CssClass="form-control quantity">
-                                        <asp:ListItem Value="1">1</asp:ListItem>
-                                        <asp:ListItem Value="2">2</asp:ListItem>
-                                        <asp:ListItem Value="3">3</asp:ListItem>
-                                     </asp:DropDownList>
-                              </div>
-                            </form>
-                            </div>
-                        <div class="col-md-4">
-                           <div class="text-right">
-                                <%--<asp:Button ID="AddCart" runat="server" Text="+"  CssClass="btn-pink-light btn addCart" Visible="false"/>--%>
-                                <asp:Button ID="AddCart" runat="server" Text="+" OnClientClick="return false;" CssClass="btn-pink-light btn addCart" Visible="true"/>
 
-                           </div>
-                        </div>
                    </div>
                 <div class="row no-mrg df-jf-start" >
                             <div class=" pd-title margin-15">
                                 <asp:Label ID="txtDescription" runat="server" Text="" CssClass="description-product"></asp:Label>
                             </div>
                         </div>
-                <asp:Button ID="verPro" runat="server" Text="Ver Detalle producto" OnClick="verPro_Click" />
             </div>
          </div>
 
         </div>
-</div>
-
-
-
-
-
+</div><asp:Label ID="error" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="result" runat="server" Text=""></asp:Label>
+        </div>
+</asp:Content>
 

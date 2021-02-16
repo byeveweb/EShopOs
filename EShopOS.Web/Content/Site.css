@@ -17,15 +17,16 @@ body {
 }
 
 a, a:hover {
-    color:inherit;
+    color: inherit;
 }
 
 
 /* Secction */
 .secction {
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
     padding-bottom: 5rem;
 }
+
 .no-mrg {
     margin-right: 0px !important;
     margin-left: 0px !important;
@@ -35,6 +36,7 @@ a, a:hover {
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
+
 .title {
     background: #611047;
     padding-bottom: 2rem;
@@ -49,9 +51,15 @@ h1, .h1 {
     font-size: 3rem;
     text-transform: uppercase;
     font-family: 'Staatliches', cursive;
-    color: #C382AE;
+    color: #A25188;
     text-align: center;
     margin: 0;
+}
+
+.h3 {
+    font-size: 4.5rem;
+    color: #611047;
+    font-family: 'Staatliches', cursive;
 }
 
 .df-jf {
@@ -60,11 +68,14 @@ h1, .h1 {
     align-content: center;
 }
 
-h2 {
+h2, .h2 {
     font-size: 4.5rem;
     color: #611047;
     font-family: 'Staatliches', cursive;
+    display: inline-flex;
+    margin: 0 2rem 0 0;
 }
+
 
 .link-access {
     padding: 5rem 0;
@@ -83,16 +94,22 @@ h2 {
     justify-content: center;
     color: #41002C;
 }
+
     .link-target:hover {
         background: #611047;
         color: #A25188;
         transition: background 1s, border 2s;
     }
-    .text-link-target {
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 1.8rem;
-    }
+
+.text-link-target {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+}
+
+.link:hover {
+    color: beige;
+}
 
 .title2 {
     padding: 1rem 0;
@@ -100,8 +117,10 @@ h2 {
 }
 
 .link-section {
-    background: #C382AE;
-    text-align: right;
+    /* background: #C382AE; */
+    /* text-align: right; */
+    padding: 2em 0rem;
+    text-align: center;
 }
 
 
@@ -117,8 +136,11 @@ h2 {
     padding: .5rem;
 }
 
-.text-box {
+.cl-dark {
+    color: #41002C !important;
+}
 
+.text-box {
     display: block;
     width: 100%;
     height: calc(2.25rem + 2px);
@@ -131,7 +153,6 @@ h2 {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-
 }
 
 .input-one-line {
@@ -145,7 +166,7 @@ h3, .h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #611047;
-    font-weight:200;
+    font-weight: 200;
 }
 
 .box-dates {
@@ -161,8 +182,17 @@ h3, .h3 {
     font-weight: 300;
 }
 
+.pr-title {
+    padding: 10rem 0 2rem 0;
+    text-align: center;
+}
+
 .bg-pink-light {
     background: #C382AE;
+}
+
+.bg-pink-dark {
+    background: #41002C;
 }
 
 .bg-pink-medium-light {
@@ -211,18 +241,17 @@ h5, .title-select {
     letter-spacing: 2px;
     color: #41002C;
     align-items: center;
-
 }
 
-    .title-select {
-        width:200px;
-    }
+.title-select {
+    width: 200px;
+}
 
-    .lineacarrito {
-        padding: 1.5rem;
-        border-top: 1px solid #eee;
-        width: 100%;
-    }
+.lineacarrito {
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+    width: 100%;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -271,6 +300,7 @@ h5, .title-select {
 .margin-15 {
     margin: 1.5rem;
 }
+
 .margin-b-1 {
     margin-bottom: 1rem;
 }
@@ -287,10 +317,13 @@ h5, .title-select {
     margin-left: 1rem;
 }
 
+.bb-pink-dark {
+    border-bottom: 1px solid #611047;
+}
 
 .image-product {
     width: 100%;
-    height: 250px;
+    height: 282px;
 }
 
     .image-product img {
@@ -316,14 +349,22 @@ h5, .title-select {
 
 .font-fantastic {
     font-family: 'Staatliches', cursive;
+    font-size: 5rem;
+}
+
+.tlt-product {
+    font-family: 'Staatliches', cursive;
+    font-size: 2.5rem;
 }
 
 .text-center {
     text-align: center;
 }
+
 .text-right {
     text-align: right;
 }
+
 .btn-pink-dark {
     border: 1px solid #C382AE;
     color: #C382AE;
@@ -331,8 +372,8 @@ h5, .title-select {
     text-transform: uppercase;
     font-weight: 200;
     letter-spacing: 2px;
-    font-size:1.2rem;
-    padding:1rem 2rem;
+    font-size: 2rem;
+    padding: 1rem 10rem;
 }
 
     .btn-pink-dark:hover {
@@ -352,9 +393,37 @@ h5, .title-select {
     letter-spacing: 2px;
 }
 
-    .btn-pink-light:hover {
-        border: 1px solid #C382AE;
-        color: #C382AE;
-        background: #41002C;
-        transition: background 1s, border 2s;
-    }
+.navbar-inverse {
+    border: none;
+}
+
+.link {
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #A25188;
+}
+
+.label-3 {
+    width: 200px;
+    text-align: right;
+}
+
+.label-4 {
+    display: inline-flex;
+    margin: 0rem 2rem 0rem;
+    max-width: 350px !important;
+    padding: 2rem;
+}
+
+
+.pr-button-up {
+    padding: 2rem 3rem;
+}
+
+.btn-pink-light:hover {
+    border: 1px solid #C382AE;
+    color: #C382AE;
+    background: #41002C;
+    transition: background 1s, border 2s;
+}

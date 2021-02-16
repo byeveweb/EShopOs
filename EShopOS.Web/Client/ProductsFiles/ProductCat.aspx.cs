@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -37,9 +38,11 @@ namespace EShopOS.Web.Client.ProductsFiles
                 content.Controls.Add(control);
             }
 
+
+            ////Pintamos el carrito
             string userId = HttpContext.Current.User.Identity.GetUserId();
-            var carts = shoppingCartManager.GetAll().Where(u=> u.User_Id == userId).Include(u=> u.User);
-            var contentCart = (ContentPlaceHolder)Master.FindControl("Carrito");
+            var carts = shoppingCartManager.GetAll().Where(u => u.User_Id == userId).Include(u => u.User);
+            var contentCart = (ContentPlaceHolder)Master.FindControl("CarritoShop");
             decimal su = 0;
 
             foreach (var cart in carts)
@@ -47,16 +50,15 @@ namespace EShopOS.Web.Client.ProductsFiles
                 var controlC = (ShoppinCartControl)Page.LoadControl("~/Controls/ShoppinCartControl.ascx");
                 controlC.ShoppingCart = cart;
                 contentCart.Controls.Add(controlC);
-
                 su += cart.Total;
-                
+
             }
 
 
-            //Sumamos el total de las celdas
-            txtTotalismo.Text = su.ToString(); 
-
-
+            //Mostramos el total y formateamos
+            string specifier = "F";
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("fr-FR");
+            txtTotalismo.Text = su.ToString(specifier, culture);
 
             //Determinamos si está autenticado
             bool isAuth = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
@@ -78,16 +80,11 @@ namespace EShopOS.Web.Client.ProductsFiles
 
         }
 
-        private void LoadProduct(Product product)
-        {
-            //txtId.Value = product.Id.ToString();
-            //txtNameProduct.Text = product.NameProduct;
-            
-        }
-
         protected void Buy_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Account/AddContactDateUser.aspx");
         }
+
+
     }
 }

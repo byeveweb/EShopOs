@@ -11,34 +11,43 @@ namespace EShopOS.Web.Admin
 {
 
 
-    public partial class Index
+    public partial class UserList
     {
 
         /// <summary>
-        /// Control GoToProducts.
+        /// Control RoleName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton GoToProducts;
+        protected global::System.Web.UI.WebControls.Label RoleName;
 
         /// <summary>
-        /// Control GoToOrders.
+        /// Control tbody.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton GoToOrders;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbody;
 
         /// <summary>
-        /// Control GoToUsers.
+        /// Control error.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton GoToUsers;
+        protected global::System.Web.UI.WebControls.Label error;
+
+        /// <summary>
+        /// Control result.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label result;
     }
 }

@@ -7,101 +7,92 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EShopOS.Web.Controls
+namespace EShopOS.Web.Client.UserDetail
 {
 
 
-    public partial class ProductControl
+    public partial class UserDetail
     {
 
         /// <summary>
-        /// Control txtImageUrl.
+        /// Control txtUsername.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image txtImageUrl;
+        protected global::System.Web.UI.WebControls.Label txtUsername;
 
         /// <summary>
-        /// Control txtNameProduct.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtNameProduct;
+        protected global::System.Web.UI.WebControls.Label txtEmail;
 
         /// <summary>
-        /// Control txtProductId.
+        /// Control txtPhoneNumber.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtProductId;
+        protected global::System.Web.UI.WebControls.Label txtPhoneNumber;
 
         /// <summary>
-        /// Control txtProductStatus.
+        /// Control txtPostalAddress.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtProductStatus;
+        protected global::System.Web.UI.WebControls.Label txtPostalAddress;
 
         /// <summary>
-        /// Control txtStock.
+        /// Control txtCity.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtStock;
+        protected global::System.Web.UI.WebControls.Label txtCity;
 
         /// <summary>
-        /// Control txtPrice.
+        /// Control txtPostalCode.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtPrice;
+        protected global::System.Web.UI.WebControls.Label txtPostalCode;
 
         /// <summary>
-        /// Control QuantityProduct.
+        /// Control tbody.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList QuantityProduct;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbody;
 
         /// <summary>
-        /// Control AddCart.
+        /// Control error.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddCart;
+        protected global::System.Web.UI.WebControls.Label error;
 
         /// <summary>
-        /// Control txtDescription.
+        /// Control result.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtDescription;
-
-        /// <summary>
-        /// Control verPro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button verPro;
+        protected global::System.Web.UI.WebControls.Label result;
     }
 }
