@@ -19,16 +19,16 @@ namespace EShopOS.Web.Client
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            try { 
             context = new ApplicationDbContext();
             productManager = new ProductManager(context);
 
-            //var idtext = Request.QueryString["Id"];
 
-            var products = productManager
-                            .GetAll()
-                            .OrderBy(i => i.NameProduct).OrderBy(i => i.Stock);
+                var products = productManager
+                                .GetAll()
+                                .OrderBy(i => i.Id);
             string formatlink = "<a href='ProductDetailAndUpdate.aspx?Id={0}' class='link'>{1}</a>";
-            string delete = "<input class='link rm' type='submit' />";
 
 
             foreach (var product in products)
@@ -40,13 +40,20 @@ namespace EShopOS.Web.Client
                 row.Cells.Add(new TableCell { Text = string.Format(product.Stock.ToString()) });
                 row.Cells.Add(new TableCell { Text = string.Format(product.ProductStatus.ToString()) });
                 row.Cells.Add(new TableCell { Text = string.Format(formatlink, product.Id, "Editar") });
-                row.Cells.Add(new TableCell { Text = string.Format(delete, product.Id, "X") });
                 tbody.Controls.Add(row);
 
             }
 
+            }
+            catch
+            {
+
+                //TODO: error, no encontrado
+                result.Text = "No se ha encontrado el listado de productos indicada";
+                result.CssClass = "has-error";
 
 
+            }
 
         }
 

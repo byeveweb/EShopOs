@@ -170,13 +170,14 @@
     <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\OrderUpdate.aspx" />
     <Content Include="Admin\OrderList.aspx" />
+    <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\UserList.aspx" />
     <Content Include="Client\OrdersFiles\OrderConfirm.aspx" />
     <Content Include="Client\OrdersFiles\OrderDetail.aspx" />
     <Content Include="Client\ProductsFiles\ProductCat.aspx" />
     <Content Include="Admin\ProductDetailAndUpdate.aspx" />
     <Content Include="Admin\ProductList.aspx" />
-    <Content Include="Client\ProductsFiles\ProductDetail.aspx" />
+    <Content Include="Client\OrdersFiles\ProductDetail.aspx" />
     <Content Include="Client\ShoppingCart\ShoppingCartDetail.aspx" />
     <Content Include="Client\UserDetail\UserDetail.aspx" />
     <Content Include="Contact.aspx" />
@@ -186,6 +187,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\ProductControl.ascx" />
+    <Content Include="Controls\ProductDelete.asmx" />
     <Content Include="Controls\ShopingCart.asmx" />
     <Content Include="Controls\ShoppinCartControl.ascx" />
     <Content Include="Default.aspx" />
@@ -366,6 +368,13 @@
     <Compile Include="Admin\OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserDetail.aspx.designer.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -391,6 +400,7 @@
     <Compile Include="Admin\OrderUpdate.aspx.designer.cs">
       <DependentUpon>OrderUpdate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ActionResult.cs" />
     <Compile Include="Client\OrdersFiles\OrderConfirm.aspx.cs">
       <DependentUpon>OrderConfirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -426,11 +436,11 @@
     <Compile Include="Admin\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductDetail.aspx.cs">
+    <Compile Include="Client\OrdersFiles\ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Client\ProductsFiles\ProductDetail.aspx.designer.cs">
+    <Compile Include="Client\OrdersFiles\ProductDetail.aspx.designer.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\ShoppingCart\ShoppingCartDetail.aspx.cs">
@@ -460,6 +470,10 @@
     </Compile>
     <Compile Include="Controls\ProductControl.ascx.designer.cs">
       <DependentUpon>ProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProductDelete.asmx.cs">
+      <DependentUpon>ProductDelete.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ShopingCart.asmx.cs">
       <DependentUpon>ShopingCart.asmx</DependentUpon>

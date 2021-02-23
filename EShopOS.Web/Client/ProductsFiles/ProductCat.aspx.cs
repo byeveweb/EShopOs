@@ -28,8 +28,11 @@ namespace EShopOS.Web.Client.ProductsFiles
             productManager = new ProductManager(context);
             shoppingCartManager = new ShoppingCartManager(context);
 
+
+            //Pintamos el producto
             var products = productManager.GetAll();
             var content = (ContentPlaceHolder)Master.FindControl("Producto");
+
 
             foreach (var product in products)
             {

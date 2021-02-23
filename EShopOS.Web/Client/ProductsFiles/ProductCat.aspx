@@ -35,11 +35,11 @@
 
                 var productId = $(this).data("id");
                 var quantity = $($(this.parentElement.parentElement.parentElement).find(".quantity")[0]).val();
-
+                var url = "https://localhost:44328/Controls/ShopingCart.asmx/AddCart"
 
                 $.ajax({
                     type: "POST",
-                    url: "https://localhost:44328/Controls/ShopingCart.asmx/AddCart",
+                    url: url,
                     data: { productId: productId, quantity: quantity },
                     success: function (data) {
                         $(".carro").html(data.all[0].textContent);

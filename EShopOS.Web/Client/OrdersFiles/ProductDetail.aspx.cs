@@ -15,11 +15,13 @@ namespace EShopOS.Web.Client.ProductsFiles
         ApplicationDbContext context = null;
         ProductManager productManager = null;
         Product product = null;
+        ShoppingCartManager shoppingCartManager = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             //Traemos el contexto de los datos de producto capa de datos
             context = new ApplicationDbContext();
             productManager = new ProductManager(context);
+            shoppingCartManager = new ShoppingCartManager(context);
 
 
 
@@ -74,6 +76,17 @@ namespace EShopOS.Web.Client.ProductsFiles
                 //TODO: Guardar un log con el error
             }
 
+        }
+
+        protected void eliminarPro_Click(object sender, EventArgs e)
+
+        {
+            var idpro = Request.QueryString["Id"];
+            var sh = shoppingCartManager.GetAll().Where(u => u.Product_Id.ToString() == idpro);
+
+            foreach (var s in sh) { 
+                shoppingCartManager.Remove(s);
+            }
         }
     }
 }

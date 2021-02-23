@@ -51,22 +51,22 @@ namespace EShopOS.Web.Client.OrdersFiles
         protected global::System.Web.UI.WebControls.Label txtODateCreation;
 
         /// <summary>
-        /// Control StatusOrder.
+        /// Control statusOrder.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label StatusOrder;
+        protected global::System.Web.UI.WebControls.Label statusOrder;
 
         /// <summary>
-        /// Control selStatusOrder.
+        /// Control txtArti.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList selStatusOrder;
+        protected global::System.Web.UI.WebControls.Label txtArti;
 
         /// <summary>
         /// Control txtUId.
@@ -105,6 +105,15 @@ namespace EShopOS.Web.Client.OrdersFiles
         protected global::System.Web.UI.WebControls.Label txtUEmail;
 
         /// <summary>
+        /// Control volver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button volver;
+
+        /// <summary>
         /// Control closeOrder.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace EShopOS.Web.Client.OrdersFiles
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button deleteOrder;
+
+        /// <summary>
+        /// Control txtTotalismo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtTotalismo;
 
         /// <summary>
         /// Control tbody.

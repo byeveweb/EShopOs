@@ -44,7 +44,6 @@
                             </div>
                         <div class="col-md-4">
                            <div class="text-right">
-                                <%--<asp:Button ID="AddCart" runat="server" Text="+"  CssClass="btn-pink-light btn addCart" Visible="false"/>--%>
                                 <asp:Button ID="AddCart" runat="server" Text="+" OnClientClick="return false;" CssClass="btn-pink-light btn addCart" Visible="true"/>
 
                            </div>
@@ -55,7 +54,7 @@
                                 <asp:Label ID="txtDescription" runat="server" Text="" CssClass="description-product"></asp:Label>
                             </div>
                         </div>
-                <asp:Button ID="verPro" runat="server" Text="Ver Detalle producto" OnClick="verPro_Click" />
+                        <%--<asp:Button ID="verPro" runat="server" Text="Ver Detalle producto" OnClick="verPro_Click" CssClass="btn-pink-light btn"/>--%>
             </div>
          </div>
 

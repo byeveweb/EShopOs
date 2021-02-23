@@ -32,7 +32,8 @@ namespace EShopOS.Web.Client
             selStatusProduct.SelectedValue = pS;
 
 
-           try { 
+            try
+            {
 
 
                 var idtext = Request.QueryString["Id"];
@@ -47,7 +48,8 @@ namespace EShopOS.Web.Client
                         product = productManager.GetById(new object[] { id });
                         if (product != null)
                         {
-                                if (!Page.IsPostBack) { 
+                            if (!Page.IsPostBack)
+                            {
 
                                 txtId.Value = product.Id.ToString();
                                 txtNameProduct.Text = product.NameProduct;
@@ -56,19 +58,19 @@ namespace EShopOS.Web.Client
                                 txtStockProduct.Text = product.Stock.ToString();
                                 selStatusProduct.Text = product.ProductStatus.ToString();
                                 txtIdProduct.Text = product.Id.ToString();
-                                }
+                            }
 
-                                nuevoPd.Visible = false;
-                                editarPd.Visible = true;
-                                txtShowId.Visible = true;
-                                btnSubmit.Text = "Editar producto";
-                        
+                            nuevoPd.Visible = false;
+                            editarPd.Visible = true;
+                            txtShowId.Visible = true;
+                            btnSubmit.Text = "Editar producto";
+
                         }
                         else
                         {
                             //TODO: error, no encontrado
                             result.Text = "No se ha encontrado el producto indicado";
-                            nuevoPd.Visible =  true;
+                            nuevoPd.Visible = true;
                             editarPd.Visible = false;
                             txtShowId.Visible = false;
                         }
@@ -77,10 +79,10 @@ namespace EShopOS.Web.Client
                     {
                         //TODO: Error de parseo
                         result.Text = "No se ha encontrado la producto indicado";
-  
+
                     }
-                } 
-           
+                }
+
             }
             catch (Exception ex)
             {
@@ -103,7 +105,7 @@ namespace EShopOS.Web.Client
             {
                 if (String.IsNullOrWhiteSpace(txtId.Value))
                 {
-                   
+
                     //ADD NEW PRODUCT
 
                     string path = Server.MapPath("~/Content/Images/") + FileUpload1.PostedFile.FileName;
@@ -124,11 +126,12 @@ namespace EShopOS.Web.Client
                     productManager.Context.SaveChanges();
                     Response.Redirect("ProductList.aspx");
 
-                
-                } else
+
+                }
+                else
                 {
                     #region modificar
-                   
+
 
                     product.NameProduct = txtNameProduct.Text;
                     product.Description = txtDescriptionProduct.Text;
@@ -152,5 +155,19 @@ namespace EShopOS.Web.Client
             }
         }
 
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            var idtext = Request.QueryString["Id"];
+            var pd = productManager.GetAll().Where(u => u.Id.ToString() == idtext);
+
+            foreach (var p in pd)
+            {
+                productManager.Remove(p);
+            }
+
+            productManager.Context.SaveChanges();
+            Response.Redirect("ProductList.aspx");
+
+        }
     }
 }

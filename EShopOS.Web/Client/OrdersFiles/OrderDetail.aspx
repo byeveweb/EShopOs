@@ -4,15 +4,16 @@
            <div class="secction">
 
 
-                 <div class="title2">
-                    <h2>Ver Orden</h2>
-                 </div>
+                 
+             <div class="bg-success pr-title">
+                <h1 class="font-fantastic">Gracias por confiar en nosotros</h1>
+             </div>
 
                 <div class="p-15">
 
                         <div class="row">
 
-                             <div class="col-md-12 bg-pink-light p-15 box-dates">
+                             <div class="col-md-9 bg-pink-light p-15 box-dates success">
 
                                     <div class="title2 ">
                                            <h5>Datos de la Orden</h5>
@@ -20,24 +21,31 @@
 
                                     <div class="p-1">
                                         <span class="label-one">Id de Orden: </span>
-                                        <asp:Label ID="txtOid" runat="server" Text="" CssClass="label-two"></asp:Label>
+                                        <asp:Label ID="txtOrderId" runat="server" Text="" CssClass="label-two"></asp:Label>
                                     </div>
 
                                      <div class="p-1">
                                         <span class="label-one">Fecha de creación: </span>
-                                        <asp:Label ID="txtODateCreation" runat="server" Text="" CssClass="label-two"></asp:Label>
+                                        <asp:Label ID="txtCreateOrder" runat="server" Text="" CssClass="label-two"></asp:Label>
                                     </div>
              
-                                    <div class="form-group p-1">
-                                        <asp:Label ID="StatusOrder" runat="server"  Text="Status Orden" AssociatedControlID="selStatusOrder" CssClass="label-one"></asp:Label>
-                                        <asp:DropDownList ID="selStatusOrder" CssClass="form-control label-two" runat="server"></asp:DropDownList>
+                                    <div class="p-1">
+                                        <asp:Label ID="StatusOrder" runat="server"  Text="Status Orden" CssClass="label-one"></asp:Label>
+                                        <asp:Label ID="txtOrderStatus" runat="server" Text="" CssClass="label-two"></asp:Label>
                                     </div>
+                                 
+                                 </div>
+                                 
 
-                               </div>
-
-
-                              
+                            <div class="col-md-3 bg-pink-light p-15 box-dates">
+                                <div class="p-1">
+                                 <span class="h2">Total: </span>
+                                    <asp:Label ID="txtTotalismo" runat="server" Text="" CssClass="h2" Visible="True"></asp:Label>
+                                </div>
+                                </div>
+                             
                             </div>
+                    </div>
 
                     
                         <div class="row"> 
@@ -48,10 +56,8 @@
                                       <thead>
                                         <tr>
                                           <th scope="col">Id</th>
-                                          <th scope="col">Order_Id</th>
                                           <th scope="col">Producto</th>
                                           <th scope="col">Precio</th>
-                                          <th scope="col">Status</th>
                                           <th scope="col">Cantidad</th>
                                           <th scope="col">Total</th>
 

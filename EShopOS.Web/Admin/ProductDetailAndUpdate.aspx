@@ -21,15 +21,21 @@
 
                 <div class="row p-15 link-section" >
 
-                    <div class="col-md-6"  id="txtShowId" Visible="false" runat="server">
+                    <div class="col-md-4"  id="txtShowId" Visible="false" runat="server">
                             <h5>Id de producto: </h5>
                             <asp:Label ID="txtIdProduct" runat="server" Text="" ></asp:Label>
                      </div>
                
-                     <div class="col-md-6">
+                     <div class="col-md-4">
 
                           <div class="form-group ">
-                              <asp:Button ID="btnSubmit" runat="server" Text="Crear nuevo producto" OnClick="btnSubmit_Click" CssClass="btn btn-pink-dark"/>
+                              <asp:Button ID="btnSubmit" runat="server" Text="Crear" OnClick="btnSubmit_Click" CssClass="btn btn-pink-dark"/>
+                            </div>
+                    </div>
+                   <div class="col-md-4">
+
+                          <div class="form-group ">
+                              <asp:Button ID="btnDelete" runat="server" Text="Eliminar producto" OnClick="btnDelete_Click" CssClass="btn btn-pink-dark"/>
                             </div>
                     </div>
                 </div>

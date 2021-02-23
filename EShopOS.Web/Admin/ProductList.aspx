@@ -17,7 +17,6 @@
               <th scope="col">Stock</th>
               <th scope="col">Status</th>
               <th scope="col">Editar</th>
-              <th scope="col">Eliminar</th>
 
             </tr>
           </thead>
@@ -28,15 +27,9 @@
             <div class="link-section">
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ProductDetailAndUpdate.aspx" CssClass="btn btn-pink-dark">Crear Nuevo Producto</asp:HyperLink>
         </div>
+        <asp:Label ID="result" runat="server" Text=""></asp:Label>
 
      </div>
 
-     <script>
-         $(document).ready(function () {
 
-             $('.rm').on('click', function () {
-                 alert("delete");
-             })
-         });
-     </script>
 </asp:Content>

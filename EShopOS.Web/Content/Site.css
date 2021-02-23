@@ -427,3 +427,27 @@ h5, .title-select {
     background: #41002C;
     transition: background 1s, border 2s;
 }
+/*Success */
+.bg-success {
+    background: #92bf50b8important;
+}
+
+.img-first {
+    width: 50%;
+    height: 50vh;
+    object-fit: cover;
+    padding-bottom: 2rem;
+    filter: hue-rotate(45deg);
+    /* opacity: 0.5; */
+    margin-left: 52rem;
+    border-radius: 31rem;
+}
+
+.bg-image {
+    background-image: url("/Content/Images/food-candy.jpg");
+    background-repeat: no-repeat;
+    /* object-fit: cover; */
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+}

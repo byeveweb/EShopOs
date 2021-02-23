@@ -29,7 +29,7 @@ namespace EShopOS.Web.Admin
            //var usee = Membership.GetAllUsers();
 
 
-                string formatlink = "<a href='OrderUpdate.aspx?Id={0}'>{1}</a>";
+                string formatlink = "<a href='UserDetail.aspx?Id={0}'>{1}</a>";
 
 
             foreach (var us in use)

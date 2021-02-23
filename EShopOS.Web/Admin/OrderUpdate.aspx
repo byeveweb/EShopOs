@@ -9,9 +9,10 @@
         <div class="secction">
 
 
-                 <div class="title2">
-                    <h2>Ver / Editar Orden</h2>
-                 </div>
+                 <div class="pr-title ">
+                    <h1 class="font-fantastic cl-dark">Ver / Editar Orden</h1>
+                </div>
+                <hr />
 
                 <div class="p-15">
 
@@ -32,11 +33,16 @@
                                         <span class="label-one">Fecha de creación: </span>
                                         <asp:Label ID="txtODateCreation" runat="server" Text="" CssClass="label-two"></asp:Label>
                                     </div>
-             
+            
                                     <div class="form-group p-1">
-                                        <asp:Label ID="StatusOrder" runat="server"  Text="Status Orden" AssociatedControlID="selStatusOrder" CssClass="label-one"></asp:Label>
-                                        <asp:DropDownList ID="selStatusOrder" CssClass="form-control label-two" runat="server"></asp:DropDownList>
+                                        <span class="label-one">Estado: </span>
+                                        <asp:Label ID="statusOrder" runat="server" Text="" CssClass="label-two"></asp:Label>
                                     </div>
+                                    <div class="form-group p-1">
+                                        <span class="label-one">Número de artículos: </span>
+                                        <asp:Label ID="txtArti" runat="server" Text="" CssClass="label-two"></asp:Label>
+                                    </div>
+                          
 
                                </div>
 
@@ -68,20 +74,31 @@
                                     </div>
 
                                </div>
-                            </div>
+                        </div>
+                  
 
                     <div class="row">
-                         <div class="col-md-4 df-jf-start pr-button-up">
-                            <asp:Button ID="closeOrder" runat="server" Text="Cerrar Orden" CssClass="btn-pink-dark btn-lg btn" OnClick="closeOrder_Click"/>
+                                                         
+                                      
+                                    
+                        <div class="col-md-1 pr-button-up">
+                            <asp:Button ID="volver" runat="server" Text="<<<" CssClass="btn-pink-light btn-lg btn" OnClick="backOrder_Click"/>
                         </div>
-                        <div class="col-md-4 df-jf-start pr-button-up">
-                            <asp:Button ID="processOrder" runat="server" Text="Procesar Orden" CssClass="btn-pink-dark btn-lg btn" OnClick="processOrder_Click"/>
+                         <div class="col-md-4 pr-button-up">
+                            <asp:Button ID="closeOrder" runat="server" Text="Cerrar" CssClass="btn-pink-dark btn-lg btn" OnClick="closeOrder_Click"/>
                         </div>
-                        <div class="col-md-4 df-jf-start pr-button-up">
-                            <asp:Button ID="deleteOrder" runat="server" Text="Eliminar Orden" CssClass="btn-pink-dark btn-lg btn" OnClick="deleteOrder_Click"/>
+                        <div class="col-md-4 pr-button-up">
+                            <asp:Button ID="processOrder" runat="server" Text="Procesar" CssClass="btn-pink-dark btn-lg btn" OnClick="processOrder_Click"/>
+                        </div>
+                        <div class="col-md-3 pr-button-up">
+                            <asp:Button ID="deleteOrder" runat="server" Text="Eliminar " CssClass="btn-pink-dark btn-lg btn" OnClick="deleteOrder_Click"/>
                         </div>
                     </div>
-                    
+                      <hr />
+                    <div class="row">
+                          <span class="h2">Total: </span>
+                                        <asp:Label ID="txtTotalismo" runat="server" Text="" CssClass="h2" Visible="True"></asp:Label>
+                    </div>
                         <div class="row"> 
                             <div class="title2 ">
                                  <h3>Detalle de la orden</h3>
@@ -90,10 +107,8 @@
                                       <thead>
                                         <tr>
                                           <th scope="col">Id</th>
-                                          <th scope="col">Order_Id</th>
                                           <th scope="col">Producto</th>
                                           <th scope="col">Precio</th>
-                                          <th scope="col">Status</th>
                                           <th scope="col">Cantidad</th>
                                           <th scope="col">Total</th>
 

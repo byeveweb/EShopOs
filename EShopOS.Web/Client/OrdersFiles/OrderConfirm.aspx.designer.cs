@@ -114,6 +114,15 @@ namespace EShopOS.Web.Client.OrdersFiles
         protected global::System.Web.UI.WebControls.Button buy_confirm;
 
         /// <summary>
+        /// Control txtIdOd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtIdOd;
+
+        /// <summary>
         /// Control tbody.
         /// </summary>
         /// <remarks>
@@ -139,5 +148,23 @@ namespace EShopOS.Web.Client.OrdersFiles
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label result;
+
+        /// <summary>
+        /// Control trae.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button trae;
+
+        /// <summary>
+        /// Control lblResultado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultado;
     }
 }

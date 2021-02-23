@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppinCartControl.ascx.cs" Inherits="EShopOS.Web.Controls.ShoppinCartControl" %>
+
 <div  class="row">
     <asp:Label ID="txtIdCart" runat="server" Text="" CssClass="card-title" Visible="False"></asp:Label>
     <asp:Label ID="txtUserId" runat="server" Text="" CssClass="card-title" Visible="False"></asp:Label>
@@ -26,8 +27,11 @@
                     <div class="texto-carrito margin-r-1 text-right">
                         <asp:Label ID="txtTotal" runat="server" Text="" CssClass="card-title"></asp:Label> €.
                     </div>
+                    
                 </div>
-
+                    <%--<asp:Button ID="X" runat="server" Text="Button" OnClick="Button1_Click" />--%>
+                    <%--<asp:LinkButton ID="LinkButton1" runat="server" OnClientClick="Button1_Click" PostBackUrl="~/Client/ProductsFiles/ProductCat.aspx">LinkButton</asp:LinkButton>--%>
+       
               </div>
 
         </div>
@@ -35,3 +39,4 @@
          
     </div>
 </div>
+ 

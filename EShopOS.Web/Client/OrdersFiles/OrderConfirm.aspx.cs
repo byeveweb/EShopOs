@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -30,6 +31,7 @@ namespace EShopOS.Web.Client.OrdersFiles
             productManager = new ProductManager(context);
 
             try { 
+
                 //Almacenamos en variables UserId y traemos los datos de usuario perteneciente al User
                 string userId = HttpContext.Current.User.Identity.GetUserId();
                 var orders = orderManager.GetAll().Where(u => u.User_Id == userId).Include(sc => sc.User);
@@ -60,24 +62,23 @@ namespace EShopOS.Web.Client.OrdersFiles
                 decimal su = 0;
                 var ordts = orderDetailManager.GetAll().Where(u => u.Order_Id == orderId).Include(or => or.Order).Include(pr => pr.Product);
                 var prodCarts = productManager.GetAll();
-                string formatlink = "<a href='ProductDtl.aspx?Id={0}'>{1}</a>";
-                string linkremove = "<a href='#' class='elim'>Eliminar</a>";
 
-                var link = new LinkButton();
-                link.Text = "Eliminar";
-                link.Click += new EventHandler(buy_confirm_Click);
-                
+                string formatlink = "<a href='ProductDetail.aspx?Id={0}'>{1}</a>";
+                string linkremove = "<a href='#' class='elim'>X</a>";
+
+
 
                 foreach (var ord in ordts)
                 {
                     var row = new TableRow();
-                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Id, ord.Product.Id.ToString()) });
-                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Id, ord.Product.NameProduct.ToString()) });
-                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Id, ord.Product.Price.ToString()) });
-                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Id, ord.Quantity.ToString()) });
-                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Id, ord.Total.ToString()) });
-                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Id, "Ver") });
-                    row.Cells.Add(new TableCell { Text = string.Format(linkremove, ord.Id, "Eliminar") });
+                    row.Cells.Add(new TableCell { Text = string.Format(ord.Product.Id.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Product.Id, ord.Product.NameProduct.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(ord.Product.Price.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(ord.Quantity.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(ord.Total.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ord.Product.Id, "Ver") });
+                    row.Cells.Add(new TableCell { Text = string.Format(linkremove, ord.Product.Id, "X") });
+
                     tbody.Controls.Add(row);
 
                     su += ord.Total;
@@ -93,8 +94,9 @@ namespace EShopOS.Web.Client.OrdersFiles
             {
 
                 //TODO: error, no encontrado
-                result.Text = "No se ha encontrado la incidencia indicada";
+                result.Text = "El carrito está vacio";
                 result.CssClass = "has-error";
+                buy_confirm.Enabled = false;
 
 
             }
@@ -104,6 +106,8 @@ namespace EShopOS.Web.Client.OrdersFiles
         {
 
             string userId = HttpContext.Current.User.Identity.GetUserId();
+            var orderId = Int32.Parse(Request.QueryString["Id"]);
+
             Order order = new Order
             {
                 CreatedDateOrder = DateTime.Parse(txtCreateOrder.Text),
@@ -112,8 +116,28 @@ namespace EShopOS.Web.Client.OrdersFiles
             };
 
             orderManager.Context.SaveChanges();
-            Response.Redirect("OrderDetail.aspx");
+            Response.Redirect("~/Client/OrdersFiles/OrderDetail?Id=" + orderId);
 
+        }
+
+
+
+        //Eliminar todos los productos de la cesta
+        protected void del2_Click(object sender, EventArgs e)
+        {
+            //Traemos el id del usuario
+            var orderId = Int32.Parse(Request.QueryString["Id"]);
+
+
+            //Traemos toda la orden de detalle 
+            var ordts = orderDetailManager.GetAll().Where(y => y.Order_Id == orderId);
+
+            foreach (var od in ordts)
+            {
+                orderDetailManager.Remove(od);
+            }
+            orderDetailManager.Context.SaveChanges();
+            Response.Redirect("OrderConfirm.aspx");
         }
     }
 }

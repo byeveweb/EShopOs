@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -35,56 +36,74 @@ namespace EShopOS.Web.Client.OrdersFiles
                 //Traemos los datos de la orden
                 var idtext = Int32.Parse(Request.QueryString["Id"]);
 
-                od = orderManager.GetById(new object[] { idtext });
+                //Mostramos los datos de la orden
+                od = orderManager
+                    .GetById(new object[] { idtext });
+
+                txtOid.Text = od.Id.ToString();
+                txtODateCreation.Text = od.CreatedDateOrder.ToString();
+                statusOrder.Text = od.OrderStatus.ToString();
 
 
-                        
 
-                                txtOid.Text = od.User_Id.ToString();
-                                txtODateCreation.Text = od.CreatedDateOrder.ToString();
-                                selStatusOrder.SelectedValue = od.OrderStatus.ToString();
-                                selStatusOrder.DataSource = Enum.GetValues(typeof(OrderStatus));
-                                var pS = selStatusOrder.SelectedValue;
-                                selStatusOrder.DataBind();
-                                selStatusOrder.SelectedValue = pS;
+                //Mostramos el número total de artículos
+                var cont = orderDetailManager
+                    .GetAll()
+                    .Where(o => o.Order_Id == od.Id)
+                    .Count();
 
-                                //Traemos los datos de usuario
-                                var userId = od.User_Id;
-                                var odus = orderManager.GetAll().Where(u => u.User_Id == userId).Include(sc => sc.User);
-
-                                //Pintamos datos para Usuario
-                                foreach (var odu in odus)
-                                {
-                                    txtUId.Text = odu.User.Id;
-                                    txtUEmail.Text = odu.User.Email;
-                                    txtUName.Text = odu.User.NameAndSurname;
-                                    txtUPhone.Text = odu.User.PhoneNumber;
-                                }
+                txtArti.Text = cont.ToString();
 
 
-                                //Traemos los datos de detalle de la orden
-                                var orderId = od.Id;
-                                var ordts = orderDetailManager.GetAll().Where(u => u.Order_Id == orderId).Include(or => or.Order).Include(pr => pr.Product);
 
-                                string formatlink = "<a href='ProductDetailAndUpdate.aspx?Id={0}'>{1}</a>";
+                //Traemos los datos de usuario
+                var userId = od.User_Id;
+                var odus = orderManager
+                    .GetAll()
+                    .Where(u => u.User_Id == userId)
+                    .Include(sc => sc.User);
+
+                //Pintamos datos para Usuario
+                foreach (var odu in odus)
+                {
+                    txtUId.Text = odu.User.Id;
+                    txtUEmail.Text = odu.User.Email;
+                    txtUName.Text = odu.User.NameAndSurname;
+                    txtUPhone.Text = odu.User.PhoneNumber;
+                }
 
 
-                                //Pintamos datos para Usuario
-                                foreach (var ordt in ordts)
-                                {
+                //Traemos los datos de detalle de la orden
+                decimal su = 0;
+                var orderId = od.Id;
+                var ordts = orderDetailManager
+                    .GetAll()
+                    .Where(u => u.Order_Id == orderId)
+                    .Include(or => or.Order)
+                    .Include(pr => pr.Product);
+                   
 
-                                    var row = new TableRow();
-                                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ordt.Id, ordt.Id.ToString()) });
-                                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ordt.Id, ordt.Order_Id.ToString()) });
-                                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Product_Id.ToString()) });
-                                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Price.ToString()) });
-                                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Quantity.ToString()) });
-                                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Total.ToString()) });
-                                    row.Cells.Add(new TableCell { Text = string.Format(formatlink, ordt.Id, "Ver") });
-                                    tbody.Controls.Add(row);
-                                }
 
-            
+                //Pintamos datos para Usuario
+                foreach (var ordt in ordts)
+                {
+
+                    var row = new TableRow();
+                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Product_Id.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Product.NameProduct.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Price.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Quantity.ToString()) });
+                    row.Cells.Add(new TableCell { Text = string.Format(ordt.Total.ToString()) });
+                    tbody.Controls.Add(row);
+                    su += ordt.Total;
+                }
+
+                //Sumamos el total de las celdas y mostramos como decimales
+                string specifier = "F";
+                CultureInfo culture = CultureInfo.CreateSpecificCulture("fr-FR");
+                txtTotalismo.Text = su.ToString(specifier, culture);
+
+
             }
 
             catch (Exception ex)
@@ -97,7 +116,8 @@ namespace EShopOS.Web.Client.OrdersFiles
 
         protected void closeOrder_Click(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
                 od.OrderStatus = OrderStatus.Close;
 
                 orderManager.Context.SaveChanges();
@@ -132,11 +152,13 @@ namespace EShopOS.Web.Client.OrdersFiles
             try
             {
                 orderManager.Remove(od);
-                var orderDetailsCarts = orderDetailManager.GetAll().Where(u => u.Order_Id == od.Id);
+                var orderDetailsCarts = orderDetailManager
+                    .GetAll()
+                    .Where(u => u.Order_Id == od.Id);
 
                 foreach (var ord in orderDetailsCarts)
                 {
-                    
+
                     orderDetailManager.Remove(ord);
                 }
 
@@ -148,6 +170,11 @@ namespace EShopOS.Web.Client.OrdersFiles
                 result.Text = "Se ha producido un error, al cerrar la orden";
                 result.CssClass = "has-error";
             }
+        }
+
+        protected void backOrder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrderList.aspx");
         }
     }
 }

@@ -91,6 +91,7 @@
 
                 <div class="col-md-4 carro">
                    <asp:ContentPlaceHolder ID="CarritoShop" runat="server">
+
                    </asp:ContentPlaceHolder>
                  </div>
             </div>

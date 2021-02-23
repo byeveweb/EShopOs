@@ -2,17 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      
     <div class="secction">
-        <div class="title2">
-              <h2>Listado de Usuarios</h2>
-        </div>
+        <div class="pr-title ">
+                <h1 class="font-fantastic cl-dark">Listado de usuarios</h1>
+             </div>
+        <hr />
          <asp:Label ID="RoleName" runat="server" Text=""></asp:Label>
         <table class="table p-15" id="products">
           <thead>
             <tr>
               <th scope="col">Id</th>
-              <th scope="col">Fecha de Creación</th>
-              <th scope="col">Estado</th>
-              <th scope="col">Usuario</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">Email</th>
               <th scope="col">Editar</th>
 
             </tr>

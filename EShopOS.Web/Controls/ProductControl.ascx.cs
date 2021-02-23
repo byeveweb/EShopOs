@@ -51,16 +51,16 @@ namespace EShopOS.Web.Controls
             //Determinamos si está o no logueado
             bool isAuth = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
 
-            //if (!isAuth)
-            //{
-            //    AddCart.Visible = false;
-            //}
+            if (!isAuth)
+            {
+                AddCart.Visible = false;
+            }
 
-            //else
-            //{
+            else
+            {
 
-            //    AddCart.Visible = true; ; ;
-            //}
+                AddCart.Visible = true; ; ;
+            }
         }
             protected void AddCart_Click(object sender, EventArgs e)
             {

@@ -79,7 +79,10 @@ namespace EShopOS.Web.Account
             };
 
             //Vas a crear la tabla de Orders Details
-            var shoppingCarts = shoppingCartManager.GetAll().Include(u => u.Product).Where(u => u.User_Id == userId);
+            var shoppingCarts = shoppingCartManager
+                .GetAll()
+                .Include(u => u.Product)
+                .Where(u => u.User_Id == userId);
 
             foreach (var sh in shoppingCarts)
             {
@@ -90,7 +93,10 @@ namespace EShopOS.Web.Account
 
             //Actualizamoslos datos de Usuario
             var manager1 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            var currentUser = manager1.FindById(User.Identity.GetUserId()); 
+            var currentUser = manager1
+                .FindById(User.Identity
+                .GetUserId()); 
+
             currentUser.PostalAddress = txtPostalAddress.Text;
             currentUser.City = txtCity.Text;
             currentUser.Email = txtEmail.Text;

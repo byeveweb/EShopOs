@@ -8,6 +8,7 @@
              </div>
 
 
+
                 <div class="p-15">
 
                         <div class="row">
@@ -56,7 +57,7 @@
 
                                     <div class="p-1">
                                             <span class="label-one">Id de la Orden: </span>
-                                            <asp:Label ID="txtOrderId" runat="server" Text=""></asp:Label>
+                                            <asp:Label ID="txtOrderId" runat="server" Text="" CssClass="idsOrder"></asp:Label>
                                     </div>
                                     <div class="p-1">
                                                 <span class="label-one">Fecha: </span>
@@ -74,18 +75,19 @@
                             <asp:Label ID="txtTotalismo" runat="server" Text="" CssClass="h2" Visible="True"></asp:Label>
 
                       <hr />
-                            <asp:Button ID="buy_confirm" runat="server" Text="Confirmar" OnClick="buy_confirm_Click" CssClass="btn btn-pink-dark"/>
-                  
+                            <asp:Button ID="buy_confirm" runat="server" Text="Pagar" OnClick="buy_confirm_Click" CssClass="btn btn-pink-dark" Enable="true"/>
+
                             </div>
                             </div>
                     </div>
     
     
-    <div class="p-15">
+                <div class="p-15">
                             <div class="row"> 
                                 <div class="title2 ">
                                      <h3>Datos de los productos</h3>
                                 </div>
+                                <asp:Label ID="txtIdOd" runat="server" Text="" CssClass="h2" Visible="True"></asp:Label>
                                 <table class="table p-15" id="lista">
                                           <thead>
                                             <tr>
@@ -106,26 +108,33 @@
 
                             </div>
         </div>
-          <asp:Label ID="error" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="error" runat="server" Text=""></asp:Label>
                             <asp:Label ID="result" runat="server" Text=""></asp:Label>
                          </div>
+
+    
+        <div>
+            <asp:Button ID="trae" runat="server" Text="Eliminar Todos los productos" CssClass="btn btn-pink-dark" OnClick="del2_Click"/>
+
+            <asp:Label ID="lblResultado" runat="server" CssClass="label" />
+        </div>
+ 
     <script>
         $(document).ready(function () {
 
-            $('.elim').on('click', function () {
+            $('.elim').on('click', function (e) {
 
-                
-                var productId = $(this).data("id");
-               
+ 
+
+                var orderId = $(this).data(".idsOrder");
 
                 $.ajax({
                     type: "POST",
-                    url: "https://localhost:44328/Controls/ShopingCart.asmx/AddCart",
-                    data: { productId: productId },
-
+                    url: "OrderConfirm.aspx/RemoveCartItem",
+                    data: { orderId: 85 },
+                    contentType: "application/json; charset=utf-8",
                     success: function (data) {
-                       
-                        $(".p-15").html(data.all[0].textContent);
+                        $("#lista").text(data);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert("some error");
@@ -134,7 +143,7 @@
                 });
             });
         });
-
+       
     </script>
 
 </asp:Content>

@@ -15,22 +15,22 @@ namespace EShopOS.Web.Client.OrdersFiles
     {
 
         /// <summary>
-        /// Control txtOid.
+        /// Control txtOrderId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtOid;
+        protected global::System.Web.UI.WebControls.Label txtOrderId;
 
         /// <summary>
-        /// Control txtODateCreation.
+        /// Control txtCreateOrder.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtODateCreation;
+        protected global::System.Web.UI.WebControls.Label txtCreateOrder;
 
         /// <summary>
         /// Control StatusOrder.
@@ -42,13 +42,22 @@ namespace EShopOS.Web.Client.OrdersFiles
         protected global::System.Web.UI.WebControls.Label StatusOrder;
 
         /// <summary>
-        /// Control selStatusOrder.
+        /// Control txtOrderStatus.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList selStatusOrder;
+        protected global::System.Web.UI.WebControls.Label txtOrderStatus;
+
+        /// <summary>
+        /// Control txtTotalismo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtTotalismo;
 
         /// <summary>
         /// Control tbody.
