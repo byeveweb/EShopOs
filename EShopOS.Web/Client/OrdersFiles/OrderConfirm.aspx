@@ -6,7 +6,10 @@
              <div class="bg-pink-dark pr-title">
                 <h1 class="font-fantastic">Resumen</h1>
              </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
 
                 <div class="p-15">
@@ -57,7 +60,11 @@
 
                                     <div class="p-1">
                                             <span class="label-one">Id de la Orden: </span>
+<<<<<<< HEAD
                                             <asp:Label ID="txtOrderId" runat="server" Text="" CssClass="idsOrder"></asp:Label>
+=======
+                                            <asp:Label ID="txtOrderId" runat="server" Text=""></asp:Label>
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
                                     </div>
                                     <div class="p-1">
                                                 <span class="label-one">Fecha: </span>
@@ -75,19 +82,31 @@
                             <asp:Label ID="txtTotalismo" runat="server" Text="" CssClass="h2" Visible="True"></asp:Label>
 
                       <hr />
+<<<<<<< HEAD
                             <asp:Button ID="buy_confirm" runat="server" Text="Pagar" OnClick="buy_confirm_Click" CssClass="btn btn-pink-dark" Enable="true"/>
 
+=======
+                            <asp:Button ID="buy_confirm" runat="server" Text="Confirmar" OnClick="buy_confirm_Click" CssClass="btn btn-pink-dark"/>
+                  
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
                             </div>
                             </div>
                     </div>
     
     
+<<<<<<< HEAD
                 <div class="p-15">
+=======
+    <div class="p-15">
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
                             <div class="row"> 
                                 <div class="title2 ">
                                      <h3>Datos de los productos</h3>
                                 </div>
+<<<<<<< HEAD
                                 <asp:Label ID="txtIdOd" runat="server" Text="" CssClass="h2" Visible="True"></asp:Label>
+=======
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
                                 <table class="table p-15" id="lista">
                                           <thead>
                                             <tr>
@@ -105,6 +124,7 @@
                                               <tbody id="tbody" runat="server">
                                               </tbody>
                                   </table>
+<<<<<<< HEAD
 
                             </div>
         </div>
@@ -145,5 +165,11 @@
         });
        
     </script>
+=======
+
+                            </div>
+        </div>
+                         </div>
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
 </asp:Content>

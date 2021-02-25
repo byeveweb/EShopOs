@@ -24,11 +24,21 @@ namespace EShopOS.Web.Client
             context = new ApplicationDbContext();
             productManager = new ProductManager(context);
 
+<<<<<<< HEAD
 
                 var products = productManager
                                 .GetAll()
                                 .OrderBy(i => i.Id);
             string formatlink = "<a href='ProductDetailAndUpdate.aspx?Id={0}' class='link'>{1}</a>";
+=======
+            //var idtext = Request.QueryString["Id"];
+
+            var products = productManager
+                            .GetAll()
+                            .OrderBy(i => i.NameProduct).OrderBy(i => i.Stock);
+            string formatlink = "<a href='ProductDetailAndUpdate.aspx?Id={0}' class='link'>{1}</a>";
+            string delete = "<input class='link rm' type='submit' />";
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
 
             foreach (var product in products)
@@ -40,10 +50,16 @@ namespace EShopOS.Web.Client
                 row.Cells.Add(new TableCell { Text = string.Format(product.Stock.ToString()) });
                 row.Cells.Add(new TableCell { Text = string.Format(product.ProductStatus.ToString()) });
                 row.Cells.Add(new TableCell { Text = string.Format(formatlink, product.Id, "Editar") });
+<<<<<<< HEAD
                 tbody.Controls.Add(row);
 
             }
 
+=======
+                row.Cells.Add(new TableCell { Text = string.Format(delete, product.Id, "X") });
+                tbody.Controls.Add(row);
+
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
             }
             catch
             {

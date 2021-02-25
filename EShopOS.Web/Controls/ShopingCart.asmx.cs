@@ -45,13 +45,29 @@ namespace EShopOS.Web.Controls
 
             var pr = productManager.GetById(productId);
             var user = HttpContext.Current.User.Identity.GetUserId();
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
            
 
             var sc = scm.GetAll().Where(e => e.User_Id == user && e.Product_Id == productId).SingleOrDefault();
             decimal price = pr.Price;
             decimal total = price * quantity;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
+                if (sc != null) { 
+                    sc.Quantity = sc.Quantity + quantity;
+                    sc.Total = sc.Quantity * price;
+                    total = sc.Total;
+                }
+
+<<<<<<< HEAD
             if (sc != null)
             {
                 sc.Quantity = sc.Quantity + quantity;
@@ -89,6 +105,29 @@ namespace EShopOS.Web.Controls
 
 
             return sb.ToString();
+=======
+                else {
+
+
+                    ShoppingCart shoppingCart = new ShoppingCart
+                    {
+
+                        Product_Id = productId,
+                        User_Id = user,
+                        Quantity = quantity,
+                        Total = total,
+
+                    };
+
+                    scm.Add(shoppingCart);
+                }
+
+
+            
+
+
+            return "hola";
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
         }
     }
 }

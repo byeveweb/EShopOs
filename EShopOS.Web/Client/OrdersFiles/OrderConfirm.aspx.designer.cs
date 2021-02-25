@@ -97,6 +97,7 @@ namespace EShopOS.Web.Client.OrdersFiles
 
         /// <summary>
         /// Control txtTotalismo.
+<<<<<<< HEAD
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -124,29 +125,43 @@ namespace EShopOS.Web.Client.OrdersFiles
 
         /// <summary>
         /// Control tbody.
+=======
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbody;
+        protected global::System.Web.UI.WebControls.Label txtTotalismo;
 
         /// <summary>
+<<<<<<< HEAD
         /// Control error.
+=======
+        /// Control buy_confirm.
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label error;
 
         /// <summary>
         /// Control result.
+=======
+        protected global::System.Web.UI.WebControls.Button buy_confirm;
+
+        /// <summary>
+        /// Control tbody.
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label result;
 
         /// <summary>
@@ -166,5 +181,8 @@ namespace EShopOS.Web.Client.OrdersFiles
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResultado;
+=======
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbody;
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
     }
 }

@@ -13,9 +13,14 @@
                 <asp:LinkButton ID="GoToOrders" runat="server" OnClick="GoToOrders_Click" CssClass="text-link-target">Ver Ordenes</asp:LinkButton>
             </div>
             <div class="col-md-3 link-target">
+<<<<<<< HEAD
                 <asp:LinkButton ID="GoToUsers" runat="server" OnClick="GoToUsers_Click" CssClass="text-link-target">Ver Usuarios</asp:LinkButton>
             </div>
 
+=======
+                <asp:LinkButton ID="GoToUsers" runat="server" OnClick="GoToOrders_Click" CssClass="text-link-target">Ver Usuarios</asp:LinkButton>
+            </div>
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
         </div>
        
         

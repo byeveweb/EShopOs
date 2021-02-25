@@ -43,10 +43,16 @@ namespace EShopOS.Web.Account
                     txtCodPostal.Text = user.PostalCode.ToString();
                     txtPostalAddress.Text = user.PostalAddress;
                     txtName.Text = user.NameAndSurname;
+<<<<<<< HEAD
                     
                     if (user.PhoneNumber != null ) {
                         txtPhoneNumber.Text = user.PhoneNumber.ToString();
 
+=======
+                    txtPhoneNumber.Text = user.PhoneNumber.ToString();
+                    if (user.PhoneNumber != null ) { 
+                        
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
                     } else { txtPhoneNumber.Text = "sin telefono"; }
 
                    
@@ -79,10 +85,14 @@ namespace EShopOS.Web.Account
             };
 
             //Vas a crear la tabla de Orders Details
+<<<<<<< HEAD
             var shoppingCarts = shoppingCartManager
                 .GetAll()
                 .Include(u => u.Product)
                 .Where(u => u.User_Id == userId);
+=======
+            var shoppingCarts = shoppingCartManager.GetAll().Include(u => u.Product).Where(u => u.User_Id == userId);
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
             foreach (var sh in shoppingCarts)
             {
@@ -93,10 +103,14 @@ namespace EShopOS.Web.Account
 
             //Actualizamoslos datos de Usuario
             var manager1 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+<<<<<<< HEAD
             var currentUser = manager1
                 .FindById(User.Identity
                 .GetUserId()); 
 
+=======
+            var currentUser = manager1.FindById(User.Identity.GetUserId()); 
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
             currentUser.PostalAddress = txtPostalAddress.Text;
             currentUser.City = txtCity.Text;
             currentUser.Email = txtEmail.Text;

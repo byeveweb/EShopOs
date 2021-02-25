@@ -44,8 +44,12 @@
                             </div>
                         <div class="col-md-4">
                            <div class="text-right">
+<<<<<<< HEAD
                                 <asp:Button ID="AddCart" runat="server" Text="+" OnClientClick="return false;" CssClass="btn-pink-light btn addCart" Visible="true"/>
 
+=======
+                                <asp:Button ID="AddCart" runat="server" Text="+" OnClientClick="return false;" CssClass="btn-pink-light btn add addCart" Visible="false"/>
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
                            </div>
                         </div>
                    </div>
@@ -54,7 +58,13 @@
                                 <asp:Label ID="txtDescription" runat="server" Text="" CssClass="description-product"></asp:Label>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <%--<asp:Button ID="verPro" runat="server" Text="Ver Detalle producto" OnClick="verPro_Click" CssClass="btn-pink-light btn"/>--%>
+=======
+                <div class="row no-mrg df-jf-start margin-15" >
+                    <asp:HyperLink ID="pdetail" runat="server" CssClass="link" NavigateUrl="~/Client/ProductFile/ProductDtl.aspx">Ver detalle >></asp:HyperLink>
+                </div>
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
             </div>
          </div>
 

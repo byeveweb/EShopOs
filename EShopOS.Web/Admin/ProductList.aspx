@@ -27,9 +27,19 @@
             <div class="link-section">
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/ProductDetailAndUpdate.aspx" CssClass="btn btn-pink-dark">Crear Nuevo Producto</asp:HyperLink>
         </div>
+<<<<<<< HEAD
         <asp:Label ID="result" runat="server" Text=""></asp:Label>
+=======
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
      </div>
 
+     <script>
+         $(document).ready(function () {
 
+             $('.rm').on('click', function () {
+                 alert("delete");
+             })
+         });
+     </script>
 </asp:Content>

@@ -132,7 +132,11 @@ namespace EShopOS.Web.Client
                 else
                 {
                     #region modificar
+<<<<<<< HEAD
 
+=======
+                   
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
                     product.NameProduct = txtNameProduct.Text;
                     product.Description = txtDescriptionProduct.Text;

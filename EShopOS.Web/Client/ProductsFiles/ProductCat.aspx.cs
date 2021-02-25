@@ -54,15 +54,24 @@ namespace EShopOS.Web.Client.ProductsFiles
                 controlC.ShoppingCart = cart;
                 contentCart.Controls.Add(controlC);
                 su += cart.Total;
+<<<<<<< HEAD
 
             }
 
 
+=======
+                
+            }
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
             //Mostramos el total y formateamos
             string specifier = "F";
             CultureInfo culture = CultureInfo.CreateSpecificCulture("fr-FR");
             txtTotalismo.Text = su.ToString(specifier, culture);
+<<<<<<< HEAD
 
+=======
+     
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
             //Determinamos si está autenticado
             bool isAuth = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
 

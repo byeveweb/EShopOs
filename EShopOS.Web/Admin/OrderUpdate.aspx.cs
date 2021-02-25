@@ -19,7 +19,10 @@ namespace EShopOS.Web.Client.OrdersFiles
         ApplicationDbContext context = null;
         OrderManager orderManager = null;
         OrderDetailManager orderDetailManager = null;
+<<<<<<< HEAD
         Order od = null;
+=======
+>>>>>>> 4bc47852fc31575efc45bb816f6af3eb8e4325c9
 
 
         protected void Page_Load(object sender, EventArgs e)
