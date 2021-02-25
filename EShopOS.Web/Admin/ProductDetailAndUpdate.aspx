@@ -35,7 +35,7 @@
                    <div class="col-md-4">
 
                           <div class="form-group ">
-                              <asp:Button ID="btnDelete" runat="server" Text="Eliminar producto" OnClick="btnDelete_Click" CssClass="btn btn-pink-dark"/>
+                              <asp:Button ID="btnDelete" runat="server" Text="Eliminar producto" OnClick="btnDelete_Click" CssClass="btn btn-pink-dark" Visible="false"/>
                             </div>
                     </div>
                 </div>

@@ -62,6 +62,7 @@ namespace EShopOS.Web.Client
 
                             nuevoPd.Visible = false;
                             editarPd.Visible = true;
+                            btnDelete.Visible = true;
                             txtShowId.Visible = true;
                             btnSubmit.Text = "Editar producto";
 

@@ -46,7 +46,7 @@ namespace EShopOS.Web.Client.UserDetail
                 var orders = orderManager
                                .GetAll().Where(u => u.User_Id == user.Id);
 
-                string formatlink = "<a href='~/Client/OrdersFile/OrderDetail.aspx?Id={0}'>{1}</a>";
+                string formatlink = "<a href='/Client/OrdersFiles/OrderDetail.aspx?Id={0}'>{1}</a>";
 
 
                 foreach (var or in orders)

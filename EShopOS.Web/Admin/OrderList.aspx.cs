@@ -22,9 +22,6 @@ namespace EShopOS.Web.Admin
         OrderDetailManager orderDetailManager = null;
 
 
-        OrderDetail orderDetail = null;
-        Order order = null;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -49,14 +46,12 @@ namespace EShopOS.Web.Admin
                     .OrderByDescending(m => m.CreatedDateOrder);
                                 
                 string formatlink = "<a href='OrderUpdate.aspx?Id={0}'>{1}</a>";
-
+                
                
 
                 foreach (var or in orders)
                 {
-
-
-
+                    
                     var row = new TableRow();
                     row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, or.Id.ToString()) });
                     row.Cells.Add(new TableCell { Text = string.Format(formatlink, or.Id, or.CreatedDateOrder.ToString()) });

@@ -13,20 +13,14 @@ namespace EShopOS.Application
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="context"></param>
+
         public ShoppingCartManager(ApplicationDbContext context)
             : base(context)
         {
 
         }
 
-        /// <summary>
-        /// Obtiene todas las incidencias de un usuario
-        /// </summary>
-        /// <param name="userId">Identificador de usuario</param>
-        /// <returns>Incidencias del usuario</returns>
-        //public IQueryable<Product> GetByProduct(string ProductId) => Context.Products.Where(e => e.Id == ProductId);
-
+      
 
     }
 }

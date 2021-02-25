@@ -47,15 +47,41 @@
 
 
                                </div>
-        </div>
+                                <div class="col-md-6 bg-pink-light-light p-15 ">
+                                    <div class="col-md-12 pr-button-up">
+                                        <asp:Button ID="volver" runat="server" Text="<<<" CssClass="btn-pink-light btn-lg btn" OnClick="backUser_Click"/>
+                                    </div>
+                                    <div class="col-md-12pr-button-up">
+                                        <asp:Button ID="deleteUser" runat="server" Text="Eliminar " CssClass="btn-pink-dark btn-lg btn" OnClick="deleteUser_Click"/>
+                                    </div>
+                       
+                                </div>
+                     </div>
           <div class="row">
-                                                         
+                          <div class="title2 ">
+                                     <h3>Mis pedidos</h3>
+                                </div>
+                                <table class="table p-15" id="lista">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">Id</th>
+                                              <th scope="col">Fecha</th>
+                                              <th scope="col">Estado</th>
+                                              <th scope="col">Ver/Editar</th>
+
+
+
+                                            </tr>
+                                          </thead>
+                                              <tbody id="tbody" runat="server">
+                                              </tbody>
+                                  </table>                                
                                       
                    
                     </div>
 
     </div>
-      <asp:Label ID="error" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="error" runat="server" Text=""></asp:Label>
                             <asp:Label ID="result" runat="server" Text=""></asp:Label>
 
 </asp:Content>

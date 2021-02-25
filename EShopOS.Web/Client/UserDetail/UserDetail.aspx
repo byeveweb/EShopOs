@@ -71,7 +71,7 @@
 
                             </div>
                     </div>
-          <asp:Label ID="error" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="error" runat="server" Text=""></asp:Label>
                             <asp:Label ID="result" runat="server" Text=""></asp:Label>
          </div>
 

@@ -78,6 +78,33 @@ namespace EShopOS.Web.Admin
         protected global::System.Web.UI.WebControls.Label txtUpostal;
 
         /// <summary>
+        /// Control volver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button volver;
+
+        /// <summary>
+        /// Control deleteUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteUser;
+
+        /// <summary>
+        /// Control tbody.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tbody;
+
+        /// <summary>
         /// Control error.
         /// </summary>
         /// <remarks>

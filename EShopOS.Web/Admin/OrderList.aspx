@@ -14,7 +14,6 @@
               <th scope="col">Fecha de creación</th>
               <th scope="col">Estado</th>
               <th scope="col">Usuario</th>
-              <th scope="col">Nº De Artículos</th>
               <th scope="col">Ver/Editar</th>
 
             </tr>
